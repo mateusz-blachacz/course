@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    image: php:7.3-apache
+    volumes:
+      - ./code:/var/www/html
+    ports:
+      - 80:80
+    depends_on:
+      - db
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - ./db:/var/lib/mysql
+    ports:
+      - 3306:3306
+   

@@ -11,3 +11,12 @@ eduweb_training_registerUser:
         age: \d+
         role: user|admin
     methods: [GET]
+eduweb_training_simple1:
+    path: /simple
+    defaults:
+        _controller: EduwebTrainingBundle:Default:simple1
+
+eduweb_training_simple2:
+    path: /simple
+    defaults:
+        _controller: EduwebTrainingBundle:Default:simple2

@@ -17,4 +17,14 @@ class DefaultController extends Controller
         return new \Symfony\Component\HttpFoundation\Response($responseMsq);
 
     }
+    public function simple1Action(){
+        $responseMsq ='Simple 1';
+        return new \Symfony\Component\HttpFoundation\Response($responseMsq);
+
+    }
+    public function simple2Action(){
+        $responseMsq ='Simple 2';
+        return new \Symfony\Component\HttpFoundation\Response($responseMsq);
+
+    }
 }

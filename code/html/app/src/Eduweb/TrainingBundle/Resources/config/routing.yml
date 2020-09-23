@@ -6,3 +6,8 @@ eduweb_training_registerUser:
     path: /register-user/{name}-{age}-{role}
     defaults:
         _controller: EduwebTrainingBundle:Default:registerUser
+        role: user
+    requirements:
+        age: \d+
+        role: user|admin
+    methods: [GET]

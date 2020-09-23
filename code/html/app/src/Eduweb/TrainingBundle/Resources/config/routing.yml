@@ -1,3 +1,8 @@
 eduweb_training_homepage:
     path:     /
     defaults: { _controller: EduwebTrainingBundle:Default:index }
+
+eduweb_training_registerUser:
+    path: /register-user
+    defaults:
+        _controller: EduwebTrainingBundle:Default:registerUser

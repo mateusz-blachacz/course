@@ -10,4 +10,11 @@ class DefaultController extends Controller
     {
         return $this->render('EduwebTrainingBundle:Default:index.html.twig');
     }
+
+    public function registerUserAction(){
+        $responseMsq = "Rejestracja użytkownika";
+
+        return new \Symfony\Component\HttpFoundation\Response($responseMsq);
+
+    }
 }

@@ -5,7 +5,9 @@
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle"
+            "AppBundle\\": "src/AppBundle",
+            "Eduweb\\": "src/Eduweb",
+            "Eduweb\\TrainingBundle\\": "src/Eduweb/TrainingBundle"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },

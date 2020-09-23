@@ -12,7 +12,9 @@ services:
     environment:
       XDEBUG_CONFIG: remote_host=host.docker.internal
       APACHE_DOCUMENT_ROOT : /var/www/html/app/web
-      #/var/www/html
+      # /var/www/html
+      #/var/www/html/app/web
+
       #/var/www/apps/app/public/
     depends_on:
       - db

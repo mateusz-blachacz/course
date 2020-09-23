@@ -20,3 +20,7 @@ eduweb_training_simple2:
     path: /simple
     defaults:
         _controller: EduwebTrainingBundle:Default:simple2
+
+eduweb_training_annotations:
+    resource: "@EduwebTrainingBundle/Controller/DefaultController.php"
+    type: annotation

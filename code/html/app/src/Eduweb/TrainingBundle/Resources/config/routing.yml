@@ -3,6 +3,6 @@ eduweb_training_homepage:
     defaults: { _controller: EduwebTrainingBundle:Default:index }
 
 eduweb_training_registerUser:
-    path: /register-user/{name}/{age}
+    path: /register-user/{name}-{age}-{role}
     defaults:
         _controller: EduwebTrainingBundle:Default:registerUser

@@ -100,4 +100,18 @@ class DefaultController extends Controller
         $response = "Hello Experiment";
         return  new shortRes\Response($response);
     }
+
+    /**
+     * @Route(
+     *     "/debugging",
+     *     name="eduweb_training_debugging"
+     * )
+     */
+    public function debbugingAction(){
+        $response = "<html>
+            <head></head>
+            <body>debugging</body>
+        </html>";
+        return new shortRes\Response($response);
+    }
 }

@@ -29,3 +29,8 @@ edu_web_training_aboutPage:
     path: /about
     defaults:
         _controller: EduwebTrainingBundle:Pages:about
+
+edu_web_training_aboutJsonPage:
+    path: /aboutJson
+    defaults:
+        _controller: EduwebTrainingBundle:Pages:aboutJson

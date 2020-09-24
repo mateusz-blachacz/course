@@ -24,3 +24,8 @@ eduweb_training_simple2:
 eduweb_training_annotations:
     resource: "@EduwebTrainingBundle/Controller/"
     type: annotation
+
+edu_web_training_aboutPage:
+    path: /about
+    defaults:
+        _controller: EduwebTrainingBundle:Pages:about

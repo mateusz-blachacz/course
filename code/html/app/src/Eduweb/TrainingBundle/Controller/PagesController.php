@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Validator\Tests\Fixtures\ToString;
-
+use Symfony\Component\HttpFoundation\Request;
 class PagesController extends Controller {
     public function aboutAction(){
         return new Response('about');
@@ -82,5 +82,31 @@ class PagesController extends Controller {
             'title'=>'Kontakt',
             'color'=>'blue'
         ));
+    }
+    /**
+     * @Route("/generateError")
+     */
+    public function genereteErrorAction(){
+        throw $this->createNotFoundException();
+
+        #throw new \Exeption('Ups, Wystapl blad Aplikacji')
+    }
+    /**
+     * @Route(
+     *     "/master-request/{name}",
+     *     name="EduwebTrainingBoundle_masterRequest"
+     * )
+     */
+    public function masterRequestAction(Request $request,$name){
+        #old way
+        //$Request = $this->getRequest();
+        #other way
+        #$Request = $this->get('request');
+       // return new Response($request->get('name'));
+        // return new Response($request->query->get('kolor','red'));
+        
+        return new Response($request->request->get('size',123));
+
+
     }
 }

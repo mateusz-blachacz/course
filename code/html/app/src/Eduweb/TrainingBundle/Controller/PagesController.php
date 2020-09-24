@@ -104,9 +104,16 @@ class PagesController extends Controller {
         #$Request = $this->get('request');
        // return new Response($request->get('name'));
         // return new Response($request->query->get('kolor','red'));
-        
+
         return new Response($request->request->get('size',123));
-
-
     }
+
+    /**
+     * @Route("/readParams")
+     */
+    public function readParamsAction(){
+        $param=$this->container->getParameter('appApiKey');
+        return new Response($param);
+    }
+
 }

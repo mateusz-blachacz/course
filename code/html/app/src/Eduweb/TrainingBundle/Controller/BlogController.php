@@ -16,14 +16,21 @@ use Eduweb\TrainingBundle\Helper\DataProvider;
 class BlogController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route(
+     *     "/",
+     *     name="edu_blog_glowna"
+     *     )
+     *
      *@Template
      */
     public function indexAction(){
         return array();
     }
     /**
-     * @Route("/dziennik")
+     * @Route(
+     *     "/dziennik",
+     *     name="edu_blog_dziennik"
+     * )
      * @Template
      */
     public function journalAction(){
@@ -35,14 +42,21 @@ class BlogController extends Controller
         );
     }
     /**
-     * @Route("/o-mnie")
+     * @Route(
+     *     "/o-mnie",
+     *      name="edu_blog_oMnie"
+     * )
      * @Template
      */
     public function aboutAction(){
         return array();
     }
     /**
-     * @Route("/kontakt")
+     * @Route(
+     *     "/kontakt",
+     *     name="edu_blog_kontakt"
+     * )
+     *
      * @Template
      */
     public function contactAction(){

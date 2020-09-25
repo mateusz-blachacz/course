@@ -6,6 +6,7 @@ use     Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Eduweb\TrainingBundle\Helper\Journal\Journal;
+use Eduweb\TrainingBundle\Helper\DataProvider;
 /**
  * Class BlogController
  * @package Eduweb\TrainingBundle\Controller
@@ -46,5 +47,27 @@ class BlogController extends Controller
      */
     public function contactAction(){
         return array();
+    }
+
+    /**
+     * @Template("EduwebTrainingBundle:Blog/Widgets:followingWidget.html.twig")
+     */
+    public function followWidgetsAction(){
+
+        return array(
+            'list'=> DataProvider::getFollowings()
+        );
+
+    }
+
+    /**
+     * @Template("EduwebTrainingBundle:Blog/Widgets:walletWidget.html.twig")
+     */
+    public function walletWidgetsAction(){
+
+        return array(
+            'list'=> DataProvider::getWallet()
+        );
+
     }
 }

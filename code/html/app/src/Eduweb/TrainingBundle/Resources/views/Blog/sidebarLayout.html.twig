@@ -15,9 +15,10 @@
 
                 {% include 'EduwebTrainingBundle:Blog/Widgets:gpwWidget.html.twig'%}
 
-                {% include 'EduwebTrainingBundle:Blog/Widgets:followingWidget.html.twig'%}
-
-                {% include 'EduwebTrainingBundle:Blog/Widgets:walletWidget.html.twig'%}
+{#                {% include 'EduwebTrainingBundle:Blog/Widgets:followingWidget.html.twig'%}#}
+                {{ render(controller('EduwebTrainingBundle:Blog:followWidgets'))  }}
+{#                {% include 'EduwebTrainingBundle:Blog/Widgets:walletWidget.html.twig'%}#}
+                {{ render(controller('EduwebTrainingBundle:Blog:walletWidgets'))  }}
 
 
             </div>

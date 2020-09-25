@@ -21,12 +21,14 @@
                 </div>
 
                 <div class="col-md-4">
-                    {% include 'EduwebTrainingBundle:Blog/Widgets:followingWidget.html.twig'%}
-
+{#                    {% include 'EduwebTrainingBundle:Blog/Widgets:followingWidget.html.twig'%}#}
+                    {{ render(controller('EduwebTrainingBundle:Blog:followWidgets'))  }}
                 </div>
 
                 <div class="col-md-4">
-                    {% include 'EduwebTrainingBundle:Blog/Widgets:walletWidget.html.twig'%}
+{#                    {% include 'EduwebTrainingBundle:Blog/Widgets:walletWidget.html.twig'%}#}
+                    {{ render(controller('EduwebTrainingBundle:Blog:walletWidgets'))  }}
+
                 </div>
             </div>
 

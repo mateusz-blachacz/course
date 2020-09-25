@@ -21,15 +21,29 @@
             </thead>
             <tbody>
             {% for row in history %}
-                <tr>
-                    <td>{{ row['company_name'] | upper }}</td>
-                    <td>{{ row['start_date'] | date('d.m.Y') }}</td>
-                    <td>{{ row['purchase_price'] | number_format(2, ',',' ') }} zł</td>
-                    <td>{{ row['quantity'] |number_format(0, ',',' ')}}</td>
-                    <td>{{ row['end_date'] | date('d.m.Y')}}</td>
-                    <td>{{ row['selling_price'] | number_format(2, ',',' ')}} zł</td>
-                    <td></td>
-                </tr>
+                {% set end_date = row['end_date']%}
+                {% if end_date is not null %}
+                    {% set result = (row['selling_price']- row['purchase_price']) * row['quantity']  %}
+
+                    {% if result>0  %}
+                        <tr class="success">
+                    {% else %}
+                        <tr class="danger">
+                    {% endif %}
+
+                {% else %}
+                    <tr>
+                {% endif %}
+
+                        <td>{{ row['company_name'] | upper }}</td>
+                        <td>{{ row['start_date'] | date('d.m.Y') }}</td>
+                        <td>{{ row['purchase_price'] | number_format(2, ',',' ') }} zł</td>
+                        <td>{{ row['quantity'] | number_format(0, ',',' ')}}</td>
+                        <td>{{ row['end_date'] is not null ? row['end_date']  | date('d.m.Y') : '---'}}</td>
+                        <td>{{ row['end_date'] is not null ? row['selling_price'] | number_format(2, ',',' ')~' zł' :'---' }} </td>
+                        <td>{{ row['end_date'] is not null ? result | number_format(2, ',',' ')~' zł' :'---' }}</td>
+
+                    </tr>
             {% else %}
                 <tr>
                     <td colspan="7">Brak wpisów histori</td>

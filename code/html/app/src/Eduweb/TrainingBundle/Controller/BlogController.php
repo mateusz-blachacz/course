@@ -5,6 +5,7 @@ namespace Eduweb\TrainingBundle\Controller;
 use     Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Eduweb\TrainingBundle\Helper\Journal\Journal;
 /**
  * Class BlogController
  * @package Eduweb\TrainingBundle\Controller
@@ -25,7 +26,11 @@ class BlogController extends Controller
      * @Template
      */
     public function journalAction(){
-        return array();
+        return array(
+            'history'=>Journal::getHistoryAsArray()
+//            'history'=>array()
+
+        );
     }
     /**
      * @Route("/o-mnie")

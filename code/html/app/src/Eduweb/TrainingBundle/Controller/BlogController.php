@@ -27,7 +27,8 @@ class BlogController extends Controller
      */
     public function journalAction(){
         return array(
-            'history'=>Journal::getHistoryAsArray()
+            'history'=>Journal::getHistoryAsArray(),
+            'historyObj'=>Journal::getHistoryAsObjects()
 //            'history'=>array()
 
         );

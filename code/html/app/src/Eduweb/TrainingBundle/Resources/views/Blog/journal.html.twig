@@ -5,7 +5,7 @@
     <article class="col-md-8 journal">
         <h1>Domowy dzienniczek inwestora</h1>
         <p>Na początku swojej przygoty z inwestowaniem postanowiłem, że każdą inwestycję będę zapisywał. W ten sposób powstał poniższy dziennik, który prezentuje moją aktywność na giełdzie. Przez ostatnie pare miesięcy wiele się działo. Na zmianę raz zyskiwałem, raz traciłem.</p>
-        <h4>Wszystkich inwestycji: 4</h4>
+        <h4>Wszystkich inwestycji: {{ history | length }}</h4>
         {#<pre>{{  dump(history) }}</pre>#}
         <table class="table table-bordered table-striped table-hover">
             <thead>
@@ -22,12 +22,12 @@
             <tbody>
             {% for row in history %}
                 <tr>
-                    <td>{{ row['company_name'] }}</td>
-                    <td>{#   {{ row['start_date'] }}#}</td>
-                    <td> {{ row['purchase_price'] }}</td>
-                    <td>{{ row['quantity'] }}</td>
-                    <td>{#  {{ row['end_date'] }} #}</td>
-                    <td>{{ row['selling_price'] }}</td>
+                    <td>{{ row['company_name'] | upper }}</td>
+                    <td>{{ row['start_date'] | date('d.m.Y') }}</td>
+                    <td>{{ row['purchase_price'] | number_format(2, ',',' ') }} zł</td>
+                    <td>{{ row['quantity'] |number_format(0, ',',' ')}}</td>
+                    <td>{{ row['end_date'] | date('d.m.Y')}}</td>
+                    <td>{{ row['selling_price'] | number_format(2, ',',' ')}} zł</td>
                     <td></td>
                 </tr>
             {% else %}

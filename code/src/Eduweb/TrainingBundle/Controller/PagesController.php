@@ -54,13 +54,11 @@ class PagesController extends Controller
      *
      *
      */
-    public function goToPageAction($page_url){
-        #return $this->redirect($this->generateUrl($page));
-        #return  $this->redirect("/app_dev.php/".$page_url);
+    public function goToPageAction($page_url)
+    {
         $redirectUrl = $this->generateUrl('eduweb_training_simple2');
 
         return $this->redirect($redirectUrl);
-
     }
 
     /**

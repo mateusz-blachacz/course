@@ -66,53 +66,50 @@ class PagesController extends Controller
      *
      * @Template
      */
-    public function printHeaderAction($title,$color){
+    public function printHeaderAction($title, $color)
+    {
         return array(
-            'title'=>$title,
-            'color'=>$color
+            'title' => $title,
+            'color' => $color
         );
     }
 
     /**
      * @Route("/contact")
      */
-    public function contantPageAction(){
-        return $this->forward('EduwebTrainingBundle:Pages:printHeader',array(
-            'title'=>'Kontakt',
-            'color'=>'blue'
+    public function contantPageAction()
+    {
+        return $this->forward('EduwebTrainingBundle:Pages:printHeader', array(
+            'title' => 'Kontakt',
+            'color' => 'blue'
         ));
     }
+
     /**
      * @Route("/generateError")
      */
-    public function genereteErrorAction(){
+    public function genereteErrorAction()
+    {
         throw $this->createNotFoundException();
-
-        #throw new \Exeption('Ups, Wystapl blad Aplikacji')
     }
+
     /**
      * @Route(
      *     "/master-request/{name}",
      *     name="EduwebTrainingBoundle_masterRequest"
      * )
      */
-    public function masterRequestAction(Request $request,$name){
-        #old way
-        //$Request = $this->getRequest();
-        #other way
-        #$Request = $this->get('request');
-       // return new Response($request->get('name'));
-        // return new Response($request->query->get('kolor','red'));
-
-        return new Response($request->request->get('size',123));
+    public function masterRequestAction(Request $request, $name)
+    {
+        return new Response($request->request->get('size', 123));
     }
 
     /**
      * @Route("/readParams")
      */
-    public function readParamsAction(){
-        $param=$this->container->getParameter('appApiKey');
+    public function readParamsAction()
+    {
+        $param = $this->container->getParameter('appApiKey');
         return new Response($param);
     }
-
 }

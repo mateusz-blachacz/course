@@ -2,9 +2,10 @@
 
 namespace Eduweb\TrainingBundle\Helper;
 
-class DataProvider {
-    
-    public static function getFollowings(){
+class DataProvider
+{
+    public static function getFollowings()
+    {
         return array(
             'ASSECO POLAND',
             'GRUPA AZOTY',
@@ -15,8 +16,9 @@ class DataProvider {
             'POLSKI KONCERN NAFTOWY ORLEN'
         );
     }
-    
-    public static function getWallet(){
+
+    public static function getWallet()
+    {
         return array(
             'ABC DATA - 4,30 zł',
             'KOMPUTRONIK - 8,56 zł',
@@ -28,9 +30,9 @@ class DataProvider {
             'POLSKI KONCERN NAFTOWY ORLEN - 54,12 zł'
         );
     }
-    
-    
-    public static function getGuestBook(){
+
+    public static function getGuestBook()
+    {
         return array(
             array(
                 'name' => '<strong>Wojtek</strong> Hossa',

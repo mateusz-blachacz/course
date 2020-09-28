@@ -53,9 +53,11 @@ class BlogController extends Controller
      * )
      * @Template
      */
-    public function aboutAction(){
+    public function aboutAction()
+    {
         return array();
     }
+
     /**
      * @Route(
      *     "/kontakt",

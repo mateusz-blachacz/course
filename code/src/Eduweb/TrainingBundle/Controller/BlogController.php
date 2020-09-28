@@ -22,11 +22,13 @@ class BlogController extends Controller
      *     name="edu_blog_glowna"
      *     )
      *
-     *@Template
+     * @Template
      */
-    public function indexAction(){
+    public function indexAction()
+    {
         return array();
     }
+
     /**
      * @Route(
      *     "/dziennik",

@@ -66,17 +66,19 @@ class BlogController extends Controller
      *
      * @Template
      */
-    public function contactAction(){
+    public function contactAction()
+    {
         return array();
     }
 
     /**
      * @Template("EduwebTrainingBundle:Blog/Widgets:followingWidget.html.twig")
      */
-    public function followWidgetsAction(){
+    public function followWidgetsAction()
+    {
 
         return array(
-            'list'=> DataProvider::getFollowings()
+            'list' => DataProvider::getFollowings()
         );
 
     }

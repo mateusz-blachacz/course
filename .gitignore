@@ -1,30 +1,30 @@
 # Cache and logs (Symfony2)
-/app/cache/*
-/app/logs/*
-!app/cache/.gitkeep
-!app/logs/.gitkeep
+code/app/cache/*
+code/app/logs/*
+!code/app/cache/.gitkeep
+!code/app/logs/.gitkeep
 
 # Email spool folder
-/app/spool/*
+code//app/spool/*
 
 # Cache, session files and logs (Symfony3)
-/var/cache/*
-/var/logs/*
-/var/sessions/*
-!var/cache/.gitkeep
-!var/logs/.gitkeep
-!var/sessions/.gitkeep
+code/var/cache/*
+code/var/logs/*
+code/var/sessions/*
+!code/var/cache/.gitkeep
+!code/var/logs/.gitkeep
+!code/var/sessions/.gitkeep
 
 # Logs (Symfony4)
 /var/log/*
 !var/log/.gitkeep
 
 # Parameters
-/app/config/parameters.yml
-/app/config/parameters.ini
+code/app/config/parameters.yml
+code/app/config/parameters.ini
 
 # Managed by Composer
-/app/bootstrap.php.cache
+code/app/bootstrap.php.cache
 /var/bootstrap.php.cache
 /bin/*
 !bin/console
@@ -36,7 +36,7 @@
 /web/uploads/
 
 # PHPUnit
-/app/phpunit.xml
+code/app/phpunit.xml
 /phpunit.xml
 
 # Build data
@@ -52,3 +52,4 @@
 /.web-server-pid
 
 /db
+/cachce

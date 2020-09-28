@@ -41,16 +41,18 @@ class BlogController extends Controller
 
         );
     }
-    /**
-     * @Route(
-     *     "/o-mnie",
-     *      name="edu_blog_oMnie"
-     * )
-     * @Template
-     */
-    public function aboutAction(){
-        return array();
-    }
+//
+//    /**
+//     * @Route(
+//     *     "/o-mnie",
+//     *      name="edu_blog_oMnie"
+//     * )
+//     * @Template
+//     */
+//    public function aboutAction(){
+//        return array();
+//    }
+//
     /**
      * @Route(
      *     "/kontakt",

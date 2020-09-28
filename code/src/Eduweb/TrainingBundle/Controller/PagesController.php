@@ -3,26 +3,28 @@
 
 namespace Eduweb\TrainingBundle\Controller;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Validator\Tests\Fixtures\ToString;
 use Symfony\Component\HttpFoundation\Request;
-class PagesController extends Controller {
-    public function aboutAction(){
+
+class PagesController extends Controller
+{
+    public function aboutAction()
+    {
         return new Response('about');
     }
 
-    public function aboutJsonAction(){
+    public function aboutJsonAction()
+    {
         $json = array(
-            'name'=>'Buty',
-            'size'=> '32',
-            'price'=> '123.23'
+            'name' => 'Buty',
+            'size' => '32',
+            'price' => '123.23'
         );
-        return new Response(json_encode($json),Response::HTTP_OK,array('Content-type' => 'application/json'));
-
+        return new Response(json_encode($json), Response::HTTP_OK, array('Content-type' => 'application/json'));
 
     }
 

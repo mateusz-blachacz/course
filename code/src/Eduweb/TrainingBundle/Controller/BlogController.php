@@ -24,6 +24,7 @@ class BlogController extends Controller
      *@Template
      */
     public function indexAction(){
+        throw new \Exception('nowy błąd');
         return array();
     }
     /**

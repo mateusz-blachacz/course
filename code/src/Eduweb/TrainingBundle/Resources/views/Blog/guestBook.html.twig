@@ -1,0 +1,18 @@
+{% extends "EduwebTrainingBundle:Blog:sidebarLayout.html.twig" %}
+
+{% block pageTitle%}
+    Ksiega gosci | {{parent()}}
+{% endblock %}
+{% block contentConteiner %}
+    <article class="col-md-8 journal">
+        <h1>Inwestorzy o blogu</h1>
+        <div class="guest-book">
+            {% for entry in comments %}
+                <section>
+                    <h4>{{ entry['name'] }}</h4>
+                    <p>{{ entry['comment']}}</p>
+                </section>
+            {% endfor %}
+        </div>
+    </article>
+{% endblock %}

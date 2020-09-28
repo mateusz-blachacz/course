@@ -1,12 +1,13 @@
 <?php
 
-
 namespace Eduweb\TrainingBundle\Controller;
+
 use     Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Eduweb\TrainingBundle\Helper\Journal\Journal;
 use Eduweb\TrainingBundle\Helper\DataProvider;
+
 /**
  * Class BlogController
  * @package Eduweb\TrainingBundle\Controller

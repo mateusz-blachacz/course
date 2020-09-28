@@ -86,4 +86,18 @@ class BlogController extends Controller
         );
 
     }
+
+    /**
+     * @Route(
+     *     "/ksiega-gosci",
+     *     name="edu_blog_ksiegaGosci"
+     * )
+     *
+     * @Template
+     */
+    public function guestBookAction(){
+        return array(
+            'comments'=> DataProvider::getGuestBook()
+        );
+    }
 }

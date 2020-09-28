@@ -3,7 +3,7 @@
 namespace Eduweb\TrainingBundle\Helper;
 
 class DataProvider {
-    
+
     public static function getFollowings(){
         return array(
             'ASSECO POLAND',
@@ -15,7 +15,7 @@ class DataProvider {
             'POLSKI KONCERN NAFTOWY ORLEN'
         );
     }
-    
+
     public static function getWallet(){
         return array(
             'ABC DATA - 4,30 zł',
@@ -28,8 +28,8 @@ class DataProvider {
             'POLSKI KONCERN NAFTOWY ORLEN - 54,12 zł'
         );
     }
-    
-    
+
+
     public static function getGuestBook(){
         return array(
             array(
@@ -42,6 +42,10 @@ class DataProvider {
             ),
             array(
                 'name' => '<strong>Irek</strong> Złośliwiec',
+                'comment' => 'Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa <script>alert("Strona zainfekowana!");</script> ac <style>body{background-color:red!important;}</style></p></section></div></article></div></body></html>turpis faucibus orci luctus non, consectetuer lobortis quis, varius in, purus. Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit'
+            ),
+            array(
+                'name' => '<strong>Irek</strong>  <script>alert("Strona zainfekowana!");</script> Złośliwiec',
                 'comment' => 'Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa <script>alert("Strona zainfekowana!");</script> ac <style>body{background-color:red!important;}</style></p></section></div></article></div></body></html>turpis faucibus orci luctus non, consectetuer lobortis quis, varius in, purus. Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit'
             ),
         );

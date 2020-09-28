@@ -86,10 +86,11 @@ class BlogController extends Controller
     /**
      * @Template("EduwebTrainingBundle:Blog/Widgets:walletWidget.html.twig")
      */
-    public function walletWidgetsAction(){
+    public function walletWidgetsAction()
+    {
 
         return array(
-            'list'=> DataProvider::getWallet()
+            'list' => DataProvider::getWallet()
         );
 
     }

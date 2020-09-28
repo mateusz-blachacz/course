@@ -6,6 +6,8 @@
 {% block contentConteiner %}
     <article class="col-md-8 journal">
         <h1>Inwestorzy o blogu</h1>
+
+        {% autoescape false %}
         <div class="guest-book">
             {% for entry in comments %}
                 <section>
@@ -14,5 +16,6 @@
                 </section>
             {% endfor %}
         </div>
+        {% endautoescape %}
     </article>
 {% endblock %}

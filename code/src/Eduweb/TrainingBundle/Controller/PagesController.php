@@ -33,17 +33,16 @@ class PagesController extends Controller
      *
      * @Template
      */
-    public function aboutTwig(){
-       #  $this-> render('EduwebTrainingBundle:Pages:aboutTwig.html.twig');
-       # return  $this-> render('EduwebTrainingBundle:Pages:aboutTwig.html.twig');# parametry za pomoca array()
+    public function aboutTwig()
+    {
         return array();
     }
 
-
     /**
      * @Route ("/about_2")
-    */
-    public function about2(){#nie używać takiej metody
+     */
+    public function about2()
+    {#nie używać takiej metody
         return new Response('about');
     }
 

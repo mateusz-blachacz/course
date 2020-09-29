@@ -24,12 +24,13 @@ class PagesController extends Controller
             'size' => '32',
             'price' => '123.23'
         );
+
         return new Response(json_encode($json), Response::HTTP_OK, array('Content-type' => 'application/json'));
 
     }
 
     /**
-     * @Route ("/aboutTwig")
+     * @Route("/aboutTwig")
      *
      * @Template
      */
@@ -39,7 +40,7 @@ class PagesController extends Controller
     }
 
     /**
-     * @Route ("/about_2")
+     * @Route("/about_2")
      */
     public function about2()
     {
@@ -102,6 +103,7 @@ class PagesController extends Controller
     public function readParamsAction()
     {
         $param = $this->container->getParameter('appApiKey');
+
         return new Response($param);
     }
 }

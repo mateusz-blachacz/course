@@ -34,3 +34,9 @@ edu_web_training_aboutJsonPage:
     path: /aboutJson
     defaults:
         _controller: EduwebTrainingBundle:Pages:aboutJson
+
+edu_blog_oMnie:
+    path: blog/o-mnie
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: EduwebTrainingBundle:Blog:about.html.twig

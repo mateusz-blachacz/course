@@ -34,12 +34,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(
-     *     "/register-tester/{name}-{age}-{role}",
-     *     name="eduweb_training_registerTester",
-     *     defaults={"role"="units"},
-     *     requirements={"age"="\d+","role"="units|functional"}
-     * )
+     * @Route("/register-tester/{name}-{age}-{role}",name="eduweb_training_registerTester",defaults={"role"="units"},requirements={"age"="\d+","role"="units|functional"})
      *
      * @Method({"GET"})
      */
@@ -75,12 +70,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(
-     *     "/generate/{method}",
-     *     defaults = {"method"="relative"},
-     *     requirements={"method"="absolute|relative"}
-     *     )
-     *
+     * @Route("/generate/{method}",defaults = {"method"="relative"},requirements={"method"="absolute|relative"})
      */
     public function generateUrlExperiment2($method){
         $response ="";
@@ -102,10 +92,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(
-     *     "/debugging",
-     *     name="eduweb_training_debugging"
-     * )
+     * @Route("/debugging",name="eduweb_training_debugging")
      */
     public function debbugingAction(){
         $response = "<html>

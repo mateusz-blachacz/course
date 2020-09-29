@@ -16,7 +16,7 @@
 {%- endblock form_start -%}
 
 {%- block form_row -%}
-    <div class="form-group{{ errors|length > 0 ? ' has-error':'' }}">
+    <div class="form-group{{ errors|length > 0 ? ' has-error' : '' }}">
         {{- form_label(form) -}}
         <div class="col-sm-9">
             {{- form_widget(form) -}}
@@ -53,6 +53,19 @@
         </label>
     {%- endif -%}
 {%- endblock form_label -%}
+
+{%- block form_widget_simple -%}
+    {%- set type = type|default('text') -%}
+    {% if type != 'file' %}
+        {% set attr = attr|merge({'class' : (attr.class|default('') ~ ' form-control')|trim}) %}
+    {% endif %}
+    <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{%- endblock form_widget_simple -%}
+
+{%- block textarea_widget -%}
+    {% set attr = attr|merge({'class' : (attr.class|default('') ~ ' form-control')|trim}) %}
+    <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+{%- endblock textarea_widget -%}
 
 {%  form_theme form _self %}
 

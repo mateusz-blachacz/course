@@ -1,17 +1,26 @@
 {% extends "EduwebTrainingBundle:Blog:sidebarLayout.html.twig" %}
 
+{%- block form_start -%}
+    {%- do form.setMethodRendered() -%}
+    {% set method = method|upper %}
+    {%- if method in ["GET", "POST"] -%}
+        {% set form_method = method %}
+    {%- else -%}
+        {% set form_method = "POST" %}
+    {%- endif -%}
+    {% set attr = attr | merge({'class':(attr.class|default("form-horizontal"))|trim }) %}
+    <form{% if name != '' %} name="{{ name }}"{% endif %} method="{{ form_method|lower }}"{% if action != '' %} action="{{ action }}"{% endif %}{% for attrname, attrvalue in attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}{% if multipart %} enctype="multipart/form-data"{% endif %}>
+    {%- if form_method != method -%}
+        <input type="hidden" name="_method" value="{{ method }}" />
+    {%- endif -%}
+{%- endblock form_start -%}
+
+{%  form_theme form _self %}
+
 {% block pageTitle %}Szkolenia Giełdowe | {{ parent() }}{% endblock %}
 {% block contentConteiner %}
     <article class="col-md-8">
         <h1>Rejestracja</h1>
-        <form class="form-horizontal" action="" method="post" {{ form_enctype(form) }}>
-            <div class="form-group">
-                {{ form_label(form.name, null, {'label_attr': {'class':'col-sm-3-control-label'}}) }}
-                <div class="col-sm-9">
-                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
-                    {{ form_errors(form.name) }}
-                </div>
-            </div>
-        </form>
+        {{ form(form) }}
     </article>
 {% endblock %}

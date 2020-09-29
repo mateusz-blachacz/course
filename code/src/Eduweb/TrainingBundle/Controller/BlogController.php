@@ -17,10 +17,7 @@ use Eduweb\TrainingBundle\Helper\DataProvider;
 class BlogController extends Controller
 {
     /**
-     * @Route(
-     *     "/",
-     *     name="edu_blog_glowna"
-     *     )
+     * @Route("/",name="edu_blog_glowna")
      *
      * @Template
      */

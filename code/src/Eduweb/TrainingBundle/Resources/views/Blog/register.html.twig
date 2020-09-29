@@ -88,6 +88,18 @@
     </select>
 {%- endblock choice_widget_collapsed -%}
 
+{%- block choice_widget_expanded -%}
+    <div {{ block('widget_container_attributes') }}>
+        {% for child in form %}
+            <div class="checkbox">
+                <label>
+                    {{ form_widget(child) }} {{ child.vars.label }}
+                </label>
+            </div>
+        {% endfor  %}
+    </div>
+{%- endblock choice_widget_expanded -%}
+
 {%  form_theme form _self %}
 
 {% block pageTitle %}Szkolenia Giełdowe | {{ parent() }}{% endblock %}

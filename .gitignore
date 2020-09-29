@@ -54,3 +54,4 @@ code/app/phpunit.xml
 
 /db
 /cachce
+/code/web/bundles/

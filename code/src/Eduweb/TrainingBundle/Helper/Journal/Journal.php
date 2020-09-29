@@ -2,9 +2,10 @@
 
 namespace Eduweb\TrainingBundle\Helper\Journal;
 
-class Journal {
-    
-    static function getHistoryAsArray(){
+class Journal
+{
+    static function getHistoryAsArray()
+    {
         return array(
             array(
                 'company_name' => 'atrem',
@@ -56,14 +57,16 @@ class Journal {
             )
         );
     }
-    
-    static function getHistoryAsObjects(){
+
+    static function getHistoryAsObjects()
+    {
         $objArr = array();
-        foreach(static::getHistoryAsArray() as $row){
+        foreach (static::getHistoryAsArray() as $row) {
             $objArr[] = new Entry($row);
         }
-        
+
         return $objArr;
     }
-    
+
 }
+

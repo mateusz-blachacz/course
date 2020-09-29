@@ -8,46 +8,46 @@ body {
     margin-bottom: 100px;
 }
 
-.jumbotron .text{
+.jumbotron .text {
     float: left;
     width: 60%;
 }
 
-.jumbotron .bull{
+.jumbotron .bull {
     float: right;
     width: 35%;
     margin-top: 25px;
 }
 
-.widget a{
+.widget a {
     margin-top: 15px;
 }
 
-.extra-padding{
+.extra-padding {
     padding: 30px 0;
 }
 
 .journal p,
-.contact p{
+.contact p {
     margin: 20px 0;
 }
 
-.contact form button{
+.contact form button {
     float: right;
 }
 
-.about .bio{
+.about .bio {
     float: left;
     width: 60%;
 }
 
-.about .img-thumbnail{
+.about .img-thumbnail {
     float: right;
     width: 30%;
     margin-top: 25px;
 }
 
-.guest-book{
+.guest-book {
     margin: 25px 0;
 }
 
@@ -57,10 +57,9 @@ body {
     border-bottom: 1px solid #ccc;
 }
 
-.guest-book section h4{
+.guest-book section h4 {
     font-weight: normal;
 }
-
 
 #footer {
     position: absolute;
@@ -71,28 +70,28 @@ body {
     background-color: #f5f5f5;
 }
 
-#footer p{
+#footer p {
     margin: 20px 0;
 }
 
-#form_birthdate{
+#form_birthdate {
     overflow: hidden;
 }
 
-[name*=birthdate]{
+[name*=birthdate] {
     float: left;
     width: 33.333%;
 }
 
-.container.alerts .alert:first-child{
+.container.alerts .alert:first-child {
     margin-top: 15px;
 }
 
-.container.alerts .alert:last-child{
+.container.alerts .alert:last-child {
     margin-bottom: 0;
 }
 
-.panel-btn{
+.panel-btn {
     margin-top: -5px;
     margin-left: 5px;
 }

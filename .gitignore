@@ -29,11 +29,12 @@ code/app/bootstrap.php.cache
 /bin/*
 !bin/console
 !bin/symfony_requirements
-/vendor/
+code/vendor/
 
 # Assets and user uploads
-/web/bundles/
-/web/uploads/
+code/web/bundles/
+code/web/uploads
+
 
 # PHPUnit
 code/app/phpunit.xml
@@ -53,3 +54,4 @@ code/app/phpunit.xml
 
 /db
 /cachce
+/code/web/bundles/

@@ -1,5 +1,6 @@
 parameters:
   appApiKey: fijofihsdfliusDHDFcjbewiu
+
 twig:
   globals:
     meta_description: Z pamiętnika domorosłego inwestora.

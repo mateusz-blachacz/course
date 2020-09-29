@@ -10,7 +10,6 @@ class Entry
     private $quantity;
     private $end_date;
     private $selling_price;
-
     private $result;
 
     function __construct(array $row)

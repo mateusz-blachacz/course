@@ -4,7 +4,6 @@ namespace Eduweb\TrainingBundle\Helper\Journal;
 
 class Journal
 {
-
     static function getHistoryAsArray()
     {
         return array(

@@ -17,7 +17,7 @@ use Eduweb\TrainingBundle\Helper\DataProvider;
 class BlogController extends Controller
 {
     /**
-     * @Route("/",name="edu_blog_glowna")
+     * @Route("/", name="edu_blog_glowna")
      *
      * @Template
      */
@@ -27,7 +27,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/dziennik",name="edu_blog_dziennik")
+     * @Route("/dziennik", name="edu_blog_dziennik")
      *
      * @Template
      */
@@ -50,7 +50,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/kontakt",name="edu_blog_kontakt")
+     * @Route("/kontakt", name="edu_blog_kontakt")
      *
      * @Template
      */

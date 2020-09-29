@@ -33,7 +33,7 @@ code/vendor/
 
 # Assets and user uploads
 code/web/bundles/
-code/web/uploads/
+code/web/uploads
 
 
 # PHPUnit

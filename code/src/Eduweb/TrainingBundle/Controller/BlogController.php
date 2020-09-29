@@ -92,4 +92,14 @@ class BlogController extends Controller
             'comments' => DataProvider::getGuestBook()
         );
     }
+
+    /**
+     * @Route("/rejestracja", name="edu_blog_rejestracja")
+     *
+     * @Template
+     */
+    public function registerAction(){
+
+        return array();
+    }
 }

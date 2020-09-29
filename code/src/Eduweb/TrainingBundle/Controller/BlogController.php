@@ -36,16 +36,12 @@ class BlogController extends Controller
         return array(
             'history' => Journal::getHistoryAsArray(),
             'historyObj' => Journal::getHistoryAsObjects()
-            //            'history'=>array()
-
         );
     }
 
     /**
-     * @Route(
-     *     "/o-mnie",
-     *      name="edu_blog_oMnie"
-     * )
+     * @Route("/o-mnie", name="edu_blog_oMnie")
+     *
      * @Template
      */
     public function aboutAction()

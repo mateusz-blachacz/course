@@ -32,8 +32,8 @@ code/app/bootstrap.php.cache
 code/vendor/
 
 # Assets and user uploads
-/web/bundles/
-/web/uploads/
+code/web/bundles/
+code/web/uploads/
 
 # PHPUnit
 code/app/phpunit.xml

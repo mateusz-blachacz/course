@@ -4,6 +4,14 @@
 {% block contentConteiner %}
     <article class="col-md-8">
         <h1>Rejestracja</h1>
-        {{ form(form) }}
+        <form class="form-horizontal" action="" method="post" {{ form_enctype(form) }}>
+            <div class="form-group">
+                {{ form_label(form.name, null, {'label_attr': {'class':'col-sm-3-control-label'}}) }}
+                <div class="col-sm-9">
+                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(form.name) }}
+                </div>
+            </div>
+        </form>
     </article>
 {% endblock %}

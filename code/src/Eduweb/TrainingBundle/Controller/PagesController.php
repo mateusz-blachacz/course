@@ -89,10 +89,7 @@ class PagesController extends Controller
     }
 
     /**
-     * @Route(
-     *     "/master-request/{name}",
-     *     name="EduwebTrainingBoundle_masterRequest"
-     * )
+     * @Route("/master-request/{name}",name="EduwebTrainingBoundle_masterRequest")
      */
     public function masterRequestAction(Request $request, $name)
     {

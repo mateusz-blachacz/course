@@ -27,10 +27,8 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route(
-     *     "/dziennik",
-     *     name="edu_blog_dziennik"
-     * )
+     * @Route("/dziennik",name="edu_blog_dziennik")
+     *
      * @Template
      */
     public function journalAction()

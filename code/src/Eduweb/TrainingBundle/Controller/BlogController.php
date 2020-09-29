@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Eduweb\TrainingBundle\Helper\Journal\Journal;
 use Eduweb\TrainingBundle\Helper\DataProvider;
+use Symfony\Component\Validator\Constraints\Null;
 
 /**
  * Class BlogController
@@ -105,9 +106,9 @@ class BlogController extends Controller
                 ->add('name', 'text')
                 ->add('email', 'email')
                 ->add('sex', 'choice', array('choices' => array('m' => 'Mężczyzna', 'f' => 'Kobieta'), "expanded" => true))
-                ->add('birthdate', 'birthday')
-                ->add('country','country')
-                ->add('course', 'choice', array('choices' => array('basic' => 'Kurs podstawowy', 'at' => 'Analiza techniczna', 'af' => 'Analiza fundamentalna', 'master'=>'Kurs zaawansowany' )))
+                ->add('birthdate', 'birthday', array('empty_value' =>' --' , 'empty_data' => NULL))
+                ->add('country','country', array('empty_value' =>' --' , 'empty_data' => NULL))
+                ->add('course', 'choice', array('choices' => array('basic' => 'Kurs podstawowy', 'at' => 'Analiza techniczna', 'af' => 'Analiza fundamentalna', 'master'=>'Kurs zaawansowany' ), 'empty_value' =>' --' , 'empty_data' => NULL))
                 ->add('invest', 'choice', array('choices' => array('a' => 'Akcje', 'o' => 'Obligacje', 'f' => 'Forex', 'etf' => 'ETF'), "expanded" => true, 'multiple' => true))
                 ->add('comments', 'textarea')
                 ->add('payment_file', 'file')

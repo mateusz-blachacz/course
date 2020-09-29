@@ -47,7 +47,7 @@ class PagesController extends Controller
     }
 
     /**
-     * @Route("/go-to-page/{page_url}",name="eduweb_training_goToPage",defaults={"page_url"="aboutTwig"})
+     * @Route("/go-to-page/{page_url}", name="eduweb_training_goToPage", defaults={"page_url"="aboutTwig"})
      */
     public function goToPageAction($page_url)
     {
@@ -89,7 +89,7 @@ class PagesController extends Controller
     }
 
     /**
-     * @Route("/master-request/{name}",name="EduwebTrainingBoundle_masterRequest")
+     * @Route("/master-request/{name}", name="EduwebTrainingBoundle_masterRequest")
      */
     public function masterRequestAction(Request $request, $name)
     {

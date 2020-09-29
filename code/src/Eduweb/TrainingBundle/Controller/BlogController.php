@@ -64,7 +64,6 @@ class BlogController extends Controller
      */
     public function followWidgetsAction()
     {
-
         return array(
             'list' => DataProvider::getFollowings()
         );
@@ -76,7 +75,6 @@ class BlogController extends Controller
      */
     public function walletWidgetsAction()
     {
-
         return array(
             'list' => DataProvider::getWallet()
         );
@@ -84,16 +82,14 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route(
-     *     "/ksiega-gosci",
-     *     name="edu_blog_ksiegaGosci"
-     * )
+     * @Route("/ksiega-gosci", name="edu_blog_ksiegaGosci")
      *
      * @Template
      */
-    public function guestBookAction(){
+    public function guestBookAction()
+    {
         return array(
-            'comments'=> DataProvider::getGuestBook()
+            'comments' => DataProvider::getGuestBook()
         );
     }
 }

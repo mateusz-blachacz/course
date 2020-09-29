@@ -50,10 +50,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route(
-     *     "/kontakt",
-     *     name="edu_blog_kontakt"
-     * )
+     * @Route("/kontakt",name="edu_blog_kontakt")
      *
      * @Template
      */

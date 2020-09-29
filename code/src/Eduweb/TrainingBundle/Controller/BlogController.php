@@ -101,8 +101,9 @@ class BlogController extends Controller
      */
     public function registerAction()
     {
+        $preData = array('name'=>'Maciej Nie z tych Żółkiewiczów', 'email' => 'Maciek@edu.web.pl', 'sex' => 'm', 'birthdate' => new \DateTime('1989-10-2'), 'country'=>'PL');
 
-        $form =$this->createFormBuilder()
+        $form =$this->createFormBuilder($preData)
                 ->add('name', 'text', array('label' => 'Imię i Nazwisko'))
                 ->add('email', 'email', array('label' => 'E-mail'))
                 ->add('sex', 'choice', array('label' => 'Płeć', 'choices' => array('m' => 'Mężczyzna', 'f' => 'Kobieta'), "expanded" => true))

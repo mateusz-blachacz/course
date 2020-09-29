@@ -1,0 +1,58 @@
+{% extends "EduwebTrainingBundle:Blog:sidebarLayout.html.twig" %}
+
+{% block pageTitle %}Dziennik | {{ parent() }}{% endblock %}
+{% block contentConteiner %}
+    <article class="col-md-8 journal">
+        <h1>Domowy dzienniczek inwestora</h1>
+        <p>Na początku swojej przygoty z inwestowaniem postanowiłem, że każdą inwestycję będę zapisywał. W ten sposób
+            powstał poniższy dziennik, który prezentuje moją aktywność na giełdzie. Przez ostatnie pare miesięcy wiele
+            się działo. Na zmianę raz zyskiwałem, raz traciłem.</p>
+
+        <h4>Wszystkich inwestycji: {{ historyObj | length }}</h4>#}
+
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Spółka</th>
+                <th>Data rozpoczęcia</th>
+                <th>Śr. kurs nabycia</th>
+                <th>Ilość</th>
+                <th>Data zakończenia</th>
+                <th>Śr. kurs sprzedaży</th>
+                <th>Wynik</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for row in historyObj %}
+                {% if  row.isFinished %}
+
+                    {% if row.isClosedPositive %}
+                        <tr class="success">
+                    {% else %}
+                        <tr class="danger">
+                    {% endif %}
+
+                {% else %}
+                    <tr>
+                {% endif %}
+
+                <td>{{ row.getCompanyName | upper }}</td>
+                <td>{{ row.getStartDate | date('d.m.Y') }}</td>
+                <td>{{ row.PurchasePrice | number_format(2, ',',' ') }} zł</td>
+                <td>{{ row.getQuantity | number_format(0, ',',' ') }}</td>
+                <td>{{ row.isFinished ? row.getEndDate | date('d.m.Y') : '---' }}</td>
+                <td>{{ row.isFinished ? row.getSellingPrice | number_format(2, ',',' ')~' zł' :'---' }} </td>
+                <td>{{ row.isFinished ? row.getResult | number_format(2, ',',' ')~' zł' :'---' }}</td>
+
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">Brak wpisów histori</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </article>
+{% endblock %}

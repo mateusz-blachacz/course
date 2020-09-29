@@ -1,0 +1,28 @@
+{% extends "EduwebTrainingBundle::base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/eduwebtraining/css/sidebar.css') }}" rel="stylesheet">
+
+{% endblock %}
+{% block pageContainer %}
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row extra-padding">
+
+            {% block  contentConteiner %} {% endblock %}
+
+            <div class="col-md-3 pull-right sidebar">
+
+                {% include 'EduwebTrainingBundle:Blog/Widgets:gpwWidget.html.twig' %}
+
+                {{ render(controller('EduwebTrainingBundle:Blog:followWidgets')) }}
+
+                {{ render(controller('EduwebTrainingBundle:Blog:walletWidgets')) }}
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
+

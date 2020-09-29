@@ -42,17 +42,12 @@ class PagesController extends Controller
      * @Route ("/about_2")
      */
     public function about2()
-    {#nie używać takiej metody
+    {
         return new Response('about');
     }
 
     /**
-     * @Route(
-     *     "/go-to-page/{page_url}",
-     *     name="eduweb_training_goToPage",
-     *     defaults={"page_url"="aboutTwig"})
-     *
-     *
+     * @Route("/go-to-page/{page_url}",name="eduweb_training_goToPage",defaults={"page_url"="aboutTwig"})
      */
     public function goToPageAction($page_url)
     {

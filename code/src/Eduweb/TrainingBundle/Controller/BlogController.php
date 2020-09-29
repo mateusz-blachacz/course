@@ -98,8 +98,23 @@ class BlogController extends Controller
      *
      * @Template
      */
-    public function registerAction(){
+    public function registerAction()
+    {
 
-        return array();
+        $form =$this->createFormBuilder()
+                ->add('name', 'text')
+                ->add('email', 'email')
+                ->add('sex', 'choice', array('choices' => array('m' => 'Mężczyzna', 'f' => 'Kobieta'), "expanded" => true))
+                ->add('birthdate', 'birthday')
+                ->add('country','country')
+                ->add('course', 'choice', array('choices' => array('basic' => 'Kurs podstawowy', 'at' => 'Analiza techniczna', 'af' => 'Analiza fundamentalna', 'master'=>'Kurs zaawansowany' )))
+                ->add('invest', 'choice', array('choices' => array('a' => 'Akcje', 'o' => 'Obligacje', 'f' => 'Forex', 'etf' => 'ETF'), "expanded" => true, 'multiple' => true))
+                ->add('comments', 'textarea')
+                ->add('payment_file', 'file')
+                ->add('rules','checkbox')
+                ->add('save', 'submit')
+                ->getForm();
+
+        return array('form' => $form->createView());
     }
 }

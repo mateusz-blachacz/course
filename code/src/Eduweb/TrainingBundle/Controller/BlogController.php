@@ -9,6 +9,7 @@ use Eduweb\TrainingBundle\Helper\Journal\Journal;
 use Eduweb\TrainingBundle\Helper\DataProvider;
 use Eduweb\TrainingBundle\Form\Type\RegisterType;
 use Symfony\Component\HttpFoundation\Request;
+use Eduweb\TrainingBundle\Entity\Register;
 
 /**
  * Class BlogController
@@ -102,29 +103,19 @@ class BlogController extends Controller
      */
     public function registerAction(Request $request)
     {
-        $preData = array('name'=>'Maciej Nie z tych Żółkiewiczów', 'email' => 'Maciek@edu.web.pl', 'sex' => 'm', 'birthdate' => new \DateTime('1989-10-2'), 'country'=>'PL');
+        $register = new Register();
+        $register->setName("Maciek Elo");
+        $register->setEmail("Maciek@edu.web.pl");
+        $register->setBirthdate(new \DateTime('1989-10-2'));
 
-        $form= $this->createForm(new RegisterType(), $preData);
+        $form= $this->createForm(new RegisterType(), $register);
 
         $form->handleRequest($request);
 
         if($form->isValid()){
             $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
-            $formData = $form->getData();
+            $register->save($savePath);
 
-            unset($formData['payment_file']);
-
-            $randVal = rand(1000,9999);
-            $dataFileName = sprintf('data_%d.txt',$randVal);
-
-            file_put_contents($savePath.$dataFileName, print_r($formData, TRUE));
-
-            $file = $form->get('payment_file')->getData();
-
-            if(NULL !== $file){
-                $newName = sprintf('file_%d.%s',$randVal,$file->guessExtension());
-                $file->move($savePath,$newName);
-            }
         }
 
         $formData = "Dane zapisane";

@@ -119,9 +119,24 @@ class BlogController extends Controller
                 ->getForm();
         $form->handleRequest($request);
         if($form->isValid()){
+            $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
             $formData = $form->getData();
-        }
 
+            unset($formData['payment_file']);
+
+            $randVal = rand(1000,9999);
+            $dataFileName = sprintf('data_%d.txt',$randVal);
+
+            file_put_contents($savePath.$dataFileName, print_r($formData, TRUE));
+
+            $file = $form->get('payment_file')->getData();
+
+            if(NULL !== $file){
+                $newName = sprintf('file_%d.%s',$randVal,$file->guessExtension());
+                $file->move($savePath,$newName);
+            }
+        }
+        $formData = "Dane zapisane";
         return array('form' => $form->createView(), 'formData' => isset($formData) ? $formData : NULL);
     }
 }

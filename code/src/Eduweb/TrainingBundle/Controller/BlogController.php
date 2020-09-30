@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Eduweb\TrainingBundle\Helper\Journal\Journal;
 use Eduweb\TrainingBundle\Helper\DataProvider;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Validator\Constraints\Null;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Class BlogController
@@ -105,7 +105,7 @@ class BlogController extends Controller
         $preData = array('name'=>'Maciej Nie z tych Żółkiewiczów', 'email' => 'Maciek@edu.web.pl', 'sex' => 'm', 'birthdate' => new \DateTime('1989-10-2'), 'country'=>'PL');
 
         $form =$this->createFormBuilder($preData)
-                ->add('name', 'text', array('label' => 'Imię i Nazwisko'))
+                ->add('name', 'text', array('label' => 'Imię i Nazwisko', 'constraints' => array(new Assert\NotBlank(), new Assert\Regex( array( 'pattern' => '/^[a-zA-Z]+ [a-zA-Z]+$/', 'message' => 'Musisz podac imie i nazwisko' )))))
                 ->add('email', 'email', array('label' => 'E-mail'))
                 ->add('sex', 'choice', array('label' => 'Płeć', 'choices' => array('m' => 'Mężczyzna', 'f' => 'Kobieta'), "expanded" => true))
                 ->add('birthdate', 'birthday', array('label' => 'Data Urodzenia', 'empty_value' =>' --' , 'empty_data' => NULL))

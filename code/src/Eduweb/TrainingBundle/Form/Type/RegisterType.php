@@ -11,7 +11,7 @@ class RegisterType extends AbstractType
 {
     public function getName()
     {
-        return 'register name ';
+        return 'register_name';
     }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

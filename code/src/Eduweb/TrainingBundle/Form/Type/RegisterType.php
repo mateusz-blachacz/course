@@ -6,7 +6,6 @@ namespace Eduweb\TrainingBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Symfony\Component\Validator\Constraints as Assert;
 
 class RegisterType extends AbstractType
 {
@@ -16,7 +15,6 @@ class RegisterType extends AbstractType
     }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-//        parent::buildForm($builder, $options);
         $builder
             ->add('name', 'text', array('label' => 'Imię i Nazwisko'))
             ->add('email', 'email', array('label' => 'E-mail'))

@@ -25,9 +25,9 @@ class RegisterType extends AbstractType
             ->add('course', 'choice', array('label' => 'Poziom Kursu', 'choices' => array('basic' => 'Kurs podstawowy', 'at' => 'Analiza techniczna', 'af' => 'Analiza fundamentalna', 'master'=>'Kurs zaawansowany' ), 'empty_value' =>' --' , 'empty_data' => NULL, 'constraints' => array(new Assert\NotBlank())))
             ->add('invest', 'choice', array('label' => 'Inwestycje', 'choices' => array('a' => 'Akcje', 'o' => 'Obligacje', 'f' => 'Forex', 'etf' => 'ETF'), "expanded" => true, 'multiple' => true, 'constraints' => array(new Assert\NotBlank(),new Assert\Count(array('min' => 2)))))
             ->add('comments', 'textarea', array('label' => 'Kometarze'))
-            ->add('payment_file', 'file', array('label' => 'Potwierdzenie przelewu', 'constraints' => array(new Assert\NotBlank(), new Assert\File(array('maxSize'=> '4M','mimeTypes'=>array('application/pdf','applia
+            ->add('payment_file', 'file', array('label' => 'Potwierdzenie przelewu', 'constraints' => array(new Assert\File(array('maxSize'=> '4M','mimeTypes'=>array('application/pdf','applia
                 cation/x-pdf'), 'mimeTypesMessage' => 'Potwierdzenie przelewu musi byc w formacie pdf')))))
-            ->add('rules','checkbox', array('label' => 'Regulamin', 'constraints' => array(new Assert\NotBlank())))
+            ->add('rules','checkbox', array('label' => 'Regulamin', 'constraints' => array(new Assert\NotBlank()),'mapped' => false))
             ->add('save', 'submit', array('label' => 'Zapisz'));
     }
 

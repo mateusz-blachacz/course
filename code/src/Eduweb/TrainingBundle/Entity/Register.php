@@ -1,17 +1,47 @@
 <?php
 
 namespace Eduweb\TrainingBundle\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class Register
 {
+    /**
+     * @Assert\NotBlank
+     * @Assert\Regex(pattern = "/^[a-zA-Z]+ [a-zA-Z]+$/", message = "Musisz podac imie i nazwisko")
+     */
     private $name;
+
+    /**
+     * @Assert\NotBlank
+     * @Assert\Email
+     */
     private $email;
     private $sex;
+
+    /**
+     * @Assert\Date
+     */
     private $birthdate;
+
+    /**
+     * @Assert\NotBlank
+     */
     private $country;
+
+    /**
+     * @Assert\NotBlank
+     */
     private $course;
+
+    /**
+     * @Assert\NotBlank
+     * @Assert\Count(min = 2)
+     */
     private $invest;
     private $comments;
+    /**
+     * @Assert\File(maxSize = "4M", mimeTypes = {"application/pdf", "appliacation/x-pdf"}, mimeTypesMessage = "Potwierdzenie przelewu musi byc w formacie pdf"))
+     */
     private $paymentFile;
 
     /**

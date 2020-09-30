@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Eduweb\TrainingBundle\Helper\Journal\Journal;
 use Eduweb\TrainingBundle\Helper\DataProvider;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints\Null;
 
 /**
@@ -99,7 +100,7 @@ class BlogController extends Controller
      *
      * @Template
      */
-    public function registerAction()
+    public function registerAction(Request $request)
     {
         $preData = array('name'=>'Maciej Nie z tych Żółkiewiczów', 'email' => 'Maciek@edu.web.pl', 'sex' => 'm', 'birthdate' => new \DateTime('1989-10-2'), 'country'=>'PL');
 
@@ -116,7 +117,11 @@ class BlogController extends Controller
                 ->add('rules','checkbox', array('label' => 'Regulamin'))
                 ->add('save', 'submit', array('label' => 'Zapisz'))
                 ->getForm();
+        $form->handleRequest($request);
+        if($form->isValid()){
+            $formData = $form->getData();
+        }
 
-        return array('form' => $form->createView());
+        return array('form' => $form->createView(), 'formData' => isset($formData) ? $formData : NULL);
     }
 }

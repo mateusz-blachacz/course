@@ -100,6 +100,54 @@
     </div>
 {%- endblock choice_widget_expanded -%}
 
+{%- block form_errors -%}
+    {%- if errors|length > 0 -%}
+        <ul>
+            {%- for error in errors -%}
+                <span class="help-block">{{ error.message }}</span>
+            {%- endfor -%}
+        </ul>
+    {%- endif -%}
+{%- endblock form_errors -%}
+
+{%- block button_row -%}
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+            {{- form_widget(form) -}}
+        </div>
+    </div>
+{%- endblock button_row -%}
+
+{%- block hidden_row -%}
+    {{ form_widget(form) }}
+{%- endblock hidden_row -%}
+
+{%- block button_widget -%}
+    {%- if label is empty -%}
+        {%- if label_format is not empty -%}
+            {% set label = label_format|replace({
+                '%name%': name,
+                '%id%': id,
+            }) %}
+        {%- else -%}
+            {% set label = name|humanize %}
+        {%- endif -%}
+    {%- endif -%}
+    {% set attr = attr|merge({'class' : (attr.class|default('') ~ ' btn')|trim}) %}
+    <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</button>
+{%- endblock button_widget -%}
+
+{%- block submit_widget -%}
+    {%- set type = type|default('submit') -%}
+    {% set attr = attr|merge({'class' : (attr.class|default('btn-success'))|trim}) %}
+    {{ block('button_widget') }}
+{%- endblock submit_widget -%}
+
+{%- block reset_widget -%}
+    {%- set type = type|default('reset') -%}
+    {{ block('button_widget') }}
+{%- endblock reset_widget -%}
+
 {%  form_theme form _self %}
 
 {% block pageTitle %}Szkolenia Giełdowe | {{ parent() }}{% endblock %}

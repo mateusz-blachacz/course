@@ -104,7 +104,7 @@ class BlogController extends Controller
     {
         $preData = array('name'=>'Maciej Nie z tych Żółkiewiczów', 'email' => 'Maciek@edu.web.pl', 'sex' => 'm', 'birthdate' => new \DateTime('1989-10-2'), 'country'=>'PL');
 
-        $form= $this->createForm(new RegisterType());
+        $form= $this->createForm(new RegisterType(), $preData);
 
         $form->handleRequest($request);
 

@@ -2,6 +2,7 @@
 
 namespace Eduweb\TrainingBundle\Controller;
 
+use Eduweb\TrainingBundle\Entity\Contact;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -10,7 +11,7 @@ use Eduweb\TrainingBundle\Helper\DataProvider;
 use Eduweb\TrainingBundle\Form\Type\RegisterType;
 use Symfony\Component\HttpFoundation\Request;
 use Eduweb\TrainingBundle\Entity\Register;
-
+use Eduweb\TrainingBundle\Form\Type\ContactType;
 /**
  * Class BlogController
  * @package Eduweb\TrainingBundle\Controller
@@ -57,9 +58,20 @@ class BlogController extends Controller
      *
      * @Template
      */
-    public function contactAction()
+    public function contactAction(Request $request)
     {
-        return array();
+        $contact = new Contact();
+
+        $form = $this->createForm(new ContactType(),$contact);
+
+        $form->handleRequest($request);
+
+        if($form->isValid()){
+            $savePath = $this->get('kernel')->getRootDir()."/../web/uploads/";
+            $contact->save($savePath);
+        }
+
+        return array('form'=>$form->createView());
     }
 
     /**

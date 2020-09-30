@@ -5,6 +5,7 @@ namespace Eduweb\TrainingBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class RegisterType extends AbstractType
@@ -31,4 +32,8 @@ class RegisterType extends AbstractType
             ->add('save', 'submit', array('label' => 'Zapisz'));
     }
 
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array('data_class'=>'Eduweb\TrainingBundle\Entity\Register'));
+    }
 }

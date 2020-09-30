@@ -117,7 +117,9 @@ class BlogController extends Controller
                 ->add('rules','checkbox', array('label' => 'Regulamin'))
                 ->add('save', 'submit', array('label' => 'Zapisz'))
                 ->getForm();
+
         $form->handleRequest($request);
+
         if($form->isValid()){
             $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
             $formData = $form->getData();
@@ -136,7 +138,9 @@ class BlogController extends Controller
                 $file->move($savePath,$newName);
             }
         }
+
         $formData = "Dane zapisane";
+
         return array('form' => $form->createView(), 'formData' => isset($formData) ? $formData : NULL);
     }
 }

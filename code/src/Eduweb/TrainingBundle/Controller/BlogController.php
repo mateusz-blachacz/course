@@ -40,8 +40,8 @@ class BlogController extends Controller
     public function journalAction()
     {
         return array(
-            'history' => Journal::getHistoryAsArray(),
-            'historyObj' => Journal::getHistoryAsObjects()
+            'history'    => Journal::getHistoryAsArray(),
+            'historyObj' => Journal::getHistoryAsObjects(),
         );
     }
 

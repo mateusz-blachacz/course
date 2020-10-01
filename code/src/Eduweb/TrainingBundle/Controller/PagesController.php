@@ -18,11 +18,7 @@ class PagesController extends Controller
 
     public function aboutJsonAction()
     {
-        $json = array(
-            'name' => 'Buty',
-            'size' => '32',
-            'price' => '123.23'
-        );
+        $json = array('name'  => 'Buty', 'size'  => '32', 'price' => '123.23',);
 
         return new Response(json_encode($json), Response::HTTP_OK, array('Content-type' => 'application/json'));
 

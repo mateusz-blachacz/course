@@ -197,6 +197,7 @@ class Register
 
     /**
      * @param mixed $comments
+     *
      * @return Register
      */
     public function setComments($comments)

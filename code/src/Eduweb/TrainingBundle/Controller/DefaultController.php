@@ -56,11 +56,10 @@ class DefaultController extends Controller
     /**
      * @Route("/generate-url")
      */
-    public function generateUrlAction(){
+    public function generateUrlAction()
+    {
         #relative url
-        $response = $this->generateUrl('eduweb_training_registerUser',
-            array('name'=>'Jan',
-            'age'=>12));
+        $response = $this->generateUrl('eduweb_training_registerUser', array('name' => 'Jan', 'age'  => 12));
 
         return new \Symfony\Component\HttpFoundation\Response($response);
     }

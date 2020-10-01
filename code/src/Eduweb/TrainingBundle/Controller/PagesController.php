@@ -67,10 +67,7 @@ class PagesController extends Controller
      */
     public function contantPageAction()
     {
-        return $this->forward('EduwebTrainingBundle:Pages:printHeader', array(
-            'title' => 'Kontakt',
-            'color' => 'blue'
-        ));
+        return $this->forward('EduwebTrainingBundle:Pages:printHeader', array('title' => 'Kontakt', 'color' => 'blue',));
     }
 
     /**

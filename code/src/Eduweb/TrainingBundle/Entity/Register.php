@@ -57,6 +57,7 @@ class Register
 
     /**
      * @param mixed $name
+     *
      * @return Register
      */
     public function setName($name)

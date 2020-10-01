@@ -1,0 +1,10 @@
+{% extends "EduwebTrainingBundle:Blog:sidebarLayout.html.twig" %}
+
+{% block pageTitle %}Szkolenia Giełdowe | {{ parent() }}{% endblock %}
+{% block contentConteiner %}
+    <article class="col-md-8">
+        <h1>Rejestracja</h1>
+        {{ form(form, {'attr':{'novalidate':'true'}}) }}
+        <pre>{{ dump(formData) }}</pre>
+    </article>
+{% endblock %}

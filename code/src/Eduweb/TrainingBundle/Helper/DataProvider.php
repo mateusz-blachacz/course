@@ -13,7 +13,7 @@ class DataProvider
             'GRUPA LOTOS',
             'NETIA',
             'TAURON POLSKA ENERGIA',
-            'POLSKI KONCERN NAFTOWY ORLEN'
+            'POLSKI KONCERN NAFTOWY ORLEN',
         );
     }
 
@@ -27,7 +27,7 @@ class DataProvider
             'AMREST HOLDINGS SE - 90,35 zł',
             'WESTA ISIC S.A. - 0,60 zł',
             'ENERGA - 17,10 zł',
-            'POLSKI KONCERN NAFTOWY ORLEN - 54,12 zł'
+            'POLSKI KONCERN NAFTOWY ORLEN - 54,12 zł',
         );
     }
 
@@ -35,20 +35,20 @@ class DataProvider
     {
         return array(
             array(
-                'name' => '<strong>Wojtek</strong> Hossa',
-                'comment' => 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim.'
+                'name'    => '<strong>Wojtek</strong> Hossa',
+                'comment' => 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim.',
             ),
             array(
-                'name' => '<strong>Marek</strong> Bessa',
-                'comment' => 'Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, <strong>luctus et interdum adipiscing wisi</strong>. Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id'
+                'name'    => '<strong>Marek</strong> Bessa',
+                'comment' => 'Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, <strong>luctus et interdum adipiscing wisi</strong>. Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id',
             ),
             array(
-                'name' => '<strong>Irek</strong> Złośliwiec',
-                'comment' => 'Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa <script>alert("Strona zainfekowana!");</script> ac <style>body{background-color:red!important;}</style></p></section></div></article></div></body></html>turpis faucibus orci luctus non, consectetuer lobortis quis, varius in, purus. Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit'
+                'name'    => '<strong>Irek</strong> Złośliwiec',
+                'comment' => 'Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa <script>alert("Strona zainfekowana!");</script> ac <style>body{background-color:red!important;}</style></p></section></div></article></div></body></html>turpis faucibus orci luctus non, consectetuer lobortis quis, varius in, purus. Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit',
             ),
             array(
-                'name' => '<strong>Irek</strong>  <script>alert("Strona zainfekowana!");</script> Złośliwiec',
-                'comment' => 'Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa <script>alert("Strona zainfekowana!");</script> ac <style>body{background-color:red!important;}</style></p></section></div></article></div></body></html>turpis faucibus orci luctus non, consectetuer lobortis quis, varius in, purus. Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit'
+                'name'    => '<strong>Irek</strong>  <script>alert("Strona zainfekowana!");</script> Złośliwiec',
+                'comment' => 'Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendum sapien massa <script>alert("Strona zainfekowana!");</script> ac <style>body{background-color:red!important;}</style></p></section></div></article></div></body></html>turpis faucibus orci luctus non, consectetuer lobortis quis, varius in, purus. Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat. Nullam wisi ultricies a, gravida vitae, dapibus risus ante sodales lectus blandit',
             ),
         );
     }

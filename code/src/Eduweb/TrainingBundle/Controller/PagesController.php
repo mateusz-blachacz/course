@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Eduweb\TrainingBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -19,11 +18,7 @@ class PagesController extends Controller
 
     public function aboutJsonAction()
     {
-        $json = array(
-            'name' => 'Buty',
-            'size' => '32',
-            'price' => '123.23'
-        );
+        $json = array('name'  => 'Buty', 'size'  => '32', 'price' => '123.23',);
 
         return new Response(json_encode($json), Response::HTTP_OK, array('Content-type' => 'application/json'));
 
@@ -64,10 +59,7 @@ class PagesController extends Controller
      */
     public function printHeaderAction($title, $color)
     {
-        return array(
-            'title' => $title,
-            'color' => $color
-        );
+        return array('title' => $title, 'color' => $color,);
     }
 
     /**
@@ -75,10 +67,7 @@ class PagesController extends Controller
      */
     public function contantPageAction()
     {
-        return $this->forward('EduwebTrainingBundle:Pages:printHeader', array(
-            'title' => 'Kontakt',
-            'color' => 'blue'
-        ));
+        return $this->forward('EduwebTrainingBundle:Pages:printHeader', array('title' => 'Kontakt', 'color' => 'blue',));
     }
 
     /**

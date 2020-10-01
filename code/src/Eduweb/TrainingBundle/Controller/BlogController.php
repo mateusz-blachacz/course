@@ -79,9 +79,7 @@ class BlogController extends Controller
      */
     public function followWidgetsAction()
     {
-        return array(
-            'list' => DataProvider::getFollowings()
-        );
+        return array('list' => DataProvider::getFollowings(),);
 
     }
 

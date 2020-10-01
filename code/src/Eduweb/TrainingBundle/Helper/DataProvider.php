@@ -27,7 +27,7 @@ class DataProvider
             'AMREST HOLDINGS SE - 90,35 zł',
             'WESTA ISIC S.A. - 0,60 zł',
             'ENERGA - 17,10 zł',
-            'POLSKI KONCERN NAFTOWY ORLEN - 54,12 zł'
+            'POLSKI KONCERN NAFTOWY ORLEN - 54,12 zł',
         );
     }
 

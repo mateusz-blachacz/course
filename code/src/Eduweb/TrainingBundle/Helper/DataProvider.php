@@ -13,7 +13,7 @@ class DataProvider
             'GRUPA LOTOS',
             'NETIA',
             'TAURON POLSKA ENERGIA',
-            'POLSKI KONCERN NAFTOWY ORLEN'
+            'POLSKI KONCERN NAFTOWY ORLEN',
         );
     }
 

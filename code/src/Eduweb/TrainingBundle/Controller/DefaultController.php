@@ -16,19 +16,26 @@ class DefaultController extends Controller
         return $this->render('EduwebTrainingBundle:Default:index.html.twig');
     }
 
-    public function registerUserAction($name,$age,$role){
-        $responseMsq = sprintf("Rejestracja użytkownika o nazwie %s (wiek: %d) rola w systemie: %s",$name,$age,$role);
+    public function registerUserAction($name, $age, $role)
+    {
+        $responseMsq = sprintf("Rejestracja użytkownika o nazwie %s (wiek: %d) rola w systemie: %s", $name, $age, $role);
 
         return new \Symfony\Component\HttpFoundation\Response($responseMsq);
 
     }
-    public function simple1Action(){
-        $responseMsq ='Simple 1';
+
+    public function simple1Action()
+    {
+        $responseMsq = 'Simple 1';
+
         return new \Symfony\Component\HttpFoundation\Response($responseMsq);
 
     }
-    public function simple2Action(){
-        $responseMsq ='Simple 2';
+
+    public function simple2Action()
+    {
+        $responseMsq = 'Simple 2';
+
         return new \Symfony\Component\HttpFoundation\Response($responseMsq);
 
     }

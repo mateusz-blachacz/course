@@ -157,6 +157,7 @@ class Register
 
     /**
      * @param mixed $course
+     *
      * @return Register
      */
     public function setCourse($course)

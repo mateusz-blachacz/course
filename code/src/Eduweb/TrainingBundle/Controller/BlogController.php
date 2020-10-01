@@ -15,6 +15,7 @@ use Eduweb\TrainingBundle\Form\Type\ContactType;
 
 /**
  * Class BlogController
+ *
  * @package Eduweb\TrainingBundle\Controller
  * @Route("/blog")
  *

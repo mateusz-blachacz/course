@@ -59,10 +59,7 @@ class PagesController extends Controller
      */
     public function printHeaderAction($title, $color)
     {
-        return array(
-            'title' => $title,
-            'color' => $color
-        );
+        return array('title' => $title, 'color' => $color,);
     }
 
     /**

@@ -12,6 +12,7 @@ use Eduweb\TrainingBundle\Form\Type\RegisterType;
 use Symfony\Component\HttpFoundation\Request;
 use Eduweb\TrainingBundle\Entity\Register;
 use Eduweb\TrainingBundle\Form\Type\ContactType;
+
 /**
  * Class BlogController
  * @package Eduweb\TrainingBundle\Controller
@@ -61,17 +62,15 @@ class BlogController extends Controller
     public function contactAction(Request $request)
     {
         $contact = new Contact();
-
-        $form = $this->createForm(new ContactType(),$contact);
-
+        $form = $this->createForm(new ContactType(), $contact);
         $form->handleRequest($request);
 
-        if($form->isValid()){
-            $savePath = $this->get('kernel')->getRootDir()."/../web/uploads/";
+        if ($form->isValid()) {
+            $savePath = $this->get('kernel')->getRootDir() . "/../web/uploads/";
             $contact->save($savePath);
         }
 
-        return array('form'=>$form->createView());
+        return array('form' => $form->createView());
     }
 
     /**
@@ -93,7 +92,6 @@ class BlogController extends Controller
         return array(
             'list' => DataProvider::getWallet()
         );
-
     }
 
     /**
@@ -120,14 +118,13 @@ class BlogController extends Controller
         $register->setEmail("Maciek@edu.web.pl");
         $register->setBirthdate(new \DateTime('1989-10-2'));
 
-        $form= $this->createForm(new RegisterType(), $register);
+        $form = $this->createForm(new RegisterType(), $register);
 
         $form->handleRequest($request);
 
-        if($form->isValid()){
-            $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
+        if ($form->isValid()) {
+            $savePath = $this->get('kernel')->getRootDir() . '/../web/uploads/';
             $register->save($savePath);
-
         }
 
         $formData = "Dane zapisane";

@@ -45,8 +45,9 @@ class DefaultController extends Controller
      *
      * @Method({"GET"})
      */
-    public function registerTesterAction($name, $age, $role){
-        $responseMsq = sprintf("Rejestracja testera o nazwie %s (wiek: %d) rola testera %s",$name,$age,$role);
+    public function registerTesterAction($name, $age, $role)
+    {
+        $responseMsq = sprintf("Rejestracja testera o nazwie %s (wiek: %d) rola testera %s", $name, $age, $role);
 
         return new \Symfony\Component\HttpFoundation\Response($responseMsq);
 

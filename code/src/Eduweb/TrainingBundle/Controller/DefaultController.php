@@ -35,7 +35,6 @@ class DefaultController extends Controller
         $responseMsq = 'Simple 2';
 
         return new \Symfony\Component\HttpFoundation\Response($responseMsq);
-
     }
 
     /**

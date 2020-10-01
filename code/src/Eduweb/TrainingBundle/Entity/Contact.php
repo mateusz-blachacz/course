@@ -49,6 +49,7 @@ class Contact
 
     /**
      * @param mixed $email
+     *
      * @return Contact
      */
     public function setEmail($email)

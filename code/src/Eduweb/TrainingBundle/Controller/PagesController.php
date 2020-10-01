@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Eduweb\TrainingBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

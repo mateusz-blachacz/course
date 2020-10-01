@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Eduweb\TrainingBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;

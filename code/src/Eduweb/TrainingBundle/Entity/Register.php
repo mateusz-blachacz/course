@@ -117,6 +117,7 @@ class Register
 
     /**
      * @param mixed $birthdate
+     *
      * @return Register
      */
     public function setBirthdate($birthdate)

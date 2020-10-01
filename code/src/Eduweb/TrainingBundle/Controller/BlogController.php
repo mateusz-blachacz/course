@@ -63,11 +63,11 @@ class BlogController extends Controller
     public function contactAction(Request $request)
     {
         $contact = new Contact();
-        $form = $this->createForm(new ContactType(), $contact);
+        $form    = $this->createForm(new ContactType(), $contact);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $savePath = $this->get('kernel')->getRootDir() . "/../web/uploads/";
+            $savePath = $this->get('kernel')->getRootDir()."/../web/uploads/";
             $contact->save($savePath);
         }
 

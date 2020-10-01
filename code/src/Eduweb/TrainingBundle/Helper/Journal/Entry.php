@@ -70,7 +70,7 @@ class Entry
     public function isClosedPositive()
     {
         if (!$this->isFinished()) {
-            return FALSE;
+            return false;
         }
 
         return ($this->getResult() > 0);

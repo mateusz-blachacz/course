@@ -23,6 +23,7 @@ class Register
      *
      * @Assert\NotBlank
      * @Assert\Regex(pattern = "/^[a-zA-Z]+ [a-zA-Z]+$/", message = "Musisz podac imie i nazwisko")
+     * @Assert\Length(max=255)
      */
     private $name;
 

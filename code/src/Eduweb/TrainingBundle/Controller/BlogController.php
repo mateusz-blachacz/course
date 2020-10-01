@@ -98,9 +98,7 @@ class BlogController extends Controller
      */
     public function guestBookAction()
     {
-        return array(
-            'comments' => DataProvider::getGuestBook()
-        );
+        return array('comments' => DataProvider::getGuestBook(),);
     }
 
     /**

@@ -137,6 +137,7 @@ class Register
 
     /**
      * @param mixed $country
+     *
      * @return Register
      */
     public function setCountry($country)

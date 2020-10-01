@@ -217,6 +217,7 @@ class Register
 
     /**
      * @param mixed $paymentFile
+     *
      * @return Register
      */
     public function setPaymentFile($paymentFile)

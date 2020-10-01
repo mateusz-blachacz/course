@@ -3,45 +3,76 @@
 namespace Eduweb\TrainingBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="registrations")
+ */
 class Register
 {
     /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
      * @Assert\NotBlank
      * @Assert\Regex(pattern = "/^[a-zA-Z]+ [a-zA-Z]+$/", message = "Musisz podac imie i nazwisko")
      */
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     *
      * @Assert\NotBlank
      * @Assert\Email
      */
     private $email;
 
+    /**
+     * @ORM\Column(type="string", length=1, nullable=true)
+     */
     private $sex;
 
     /**
+     * @ORM\Column(type="date", nullable=true)
+     *
      * @Assert\Date
      */
     private $birthdate;
 
     /**
+     * @ORM\Column(type="string", length=2)
+     *
      * @Assert\NotBlank
      */
     private $country;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     *
      * @Assert\NotBlank
      */
     private $course;
 
     /**
+     * @ORM\Column(type="array")
+     *
      * @Assert\NotBlank
      * @Assert\Count(min = 2)
      */
     private $invest;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
     private $comments;
+
     /**
      * @Assert\File(maxSize = "4M", mimeTypes = {"application/pdf", "appliacation/x-pdf"}, mimeTypesMessage = "Potwierdzenie przelewu musi byc w formacie pdf"))
      */

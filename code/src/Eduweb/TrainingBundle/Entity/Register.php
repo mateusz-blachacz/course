@@ -168,15 +168,19 @@ class Register
     }
 
     /**
-     * @return mixed
+     * Get email
+     *
+     * @return string
      */
-    public function getSex()
+    public function getEmail()
     {
-        return $this->sex;
+        return $this->email;
     }
 
     /**
-     * @param mixed $sex
+     * Set sex
+     *
+     * @param string $sex
      *
      * @return Register
      */

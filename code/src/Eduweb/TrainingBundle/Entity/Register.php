@@ -1,6 +1,7 @@
 <?php
 
 namespace Eduweb\TrainingBundle\Entity;
+
 use Symfony\Component\Validator\Constraints as Assert;
 
 class Register
@@ -16,6 +17,7 @@ class Register
      * @Assert\Email
      */
     private $email;
+
     private $sex;
 
     /**
@@ -38,6 +40,7 @@ class Register
      * @Assert\Count(min = 2)
      */
     private $invest;
+
     private $comments;
     /**
      * @Assert\File(maxSize = "4M", mimeTypes = {"application/pdf", "appliacation/x-pdf"}, mimeTypesMessage = "Potwierdzenie przelewu musi byc w formacie pdf"))
@@ -215,23 +218,24 @@ class Register
         return $this;
     }
 
-    public function save($savePath){
+    public function save($savePath)
+    {
 
         $paramsNames = array('name', 'email', 'birthdate', 'country', 'course', 'invest', 'comments');
-        $formData =array();
-        foreach($paramsNames as $name){
+        $formData = array();
+        foreach ($paramsNames as $name) {
             $formData[$name] = $this->$name;
         }
-        $randVal = rand(1000,9999);
-        $dataFileName = sprintf('data_%d.txt',$randVal);
+        $randVal = rand(1000, 9999);
+        $dataFileName = sprintf('data_%d.txt', $randVal);
 
         file_put_contents($savePath.$dataFileName, print_r($formData, TRUE));
 
         $file = $this->getPaymentFile();
 
-        if(NULL !== $file){
-            $newName = sprintf('file_%d.%s',$randVal,$file->guessExtension());
-            $file->move($savePath,$newName);
+        if (NULL !== $file) {
+            $newName = sprintf('file_%d.%s', $randVal, $file->guessExtension());
+            $file->move($savePath, $newName);
         }
     }
 }

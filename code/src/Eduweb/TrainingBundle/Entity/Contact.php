@@ -29,6 +29,7 @@ class Contact
 
     /**
      * @param mixed $name
+     *
      * @return Contact
      */
     public function setName($name)

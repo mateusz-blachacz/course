@@ -29,6 +29,7 @@ class Contact
 
     /**
      * @param mixed $name
+     *
      * @return Contact
      */
     public function setName($name)
@@ -48,6 +49,7 @@ class Contact
 
     /**
      * @param mixed $email
+     *
      * @return Contact
      */
     public function setEmail($email)
@@ -67,6 +69,7 @@ class Contact
 
     /**
      * @param mixed $message
+     *
      * @return Contact
      */
     public function setMessage($message)
@@ -79,13 +82,13 @@ class Contact
     public function save($savePath)
     {
         $paramsNames = array('name', 'email', 'message');
-        $formData = array();
+        $formData    = array();
         foreach ($paramsNames as $name) {
             $formData[$name] = $this->$name;
         }
-        $randVal = rand(1000, 9999);
+        $randVal      = rand(1000, 9999);
         $dataFileName = sprintf('data_%d.txt', $randVal);
 
-        file_put_contents($savePath.$dataFileName, print_r($formData, TRUE));
+        file_put_contents($savePath.$dataFileName, print_r($formData, true));
     }
 }

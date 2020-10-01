@@ -57,6 +57,7 @@ class Register
 
     /**
      * @param mixed $name
+     *
      * @return Register
      */
     public function setName($name)
@@ -76,6 +77,7 @@ class Register
 
     /**
      * @param mixed $email
+     *
      * @return Register
      */
     public function setEmail($email)
@@ -95,6 +97,7 @@ class Register
 
     /**
      * @param mixed $sex
+     *
      * @return Register
      */
     public function setSex($sex)
@@ -114,6 +117,7 @@ class Register
 
     /**
      * @param mixed $birthdate
+     *
      * @return Register
      */
     public function setBirthdate($birthdate)
@@ -133,6 +137,7 @@ class Register
 
     /**
      * @param mixed $country
+     *
      * @return Register
      */
     public function setCountry($country)
@@ -152,6 +157,7 @@ class Register
 
     /**
      * @param mixed $course
+     *
      * @return Register
      */
     public function setCourse($course)
@@ -171,6 +177,7 @@ class Register
 
     /**
      * @param mixed $invest
+     *
      * @return Register
      */
     public function setInvest($invest)
@@ -190,6 +197,7 @@ class Register
 
     /**
      * @param mixed $comments
+     *
      * @return Register
      */
     public function setComments($comments)
@@ -209,6 +217,7 @@ class Register
 
     /**
      * @param mixed $paymentFile
+     *
      * @return Register
      */
     public function setPaymentFile($paymentFile)
@@ -220,20 +229,20 @@ class Register
 
     public function save($savePath)
     {
-
         $paramsNames = array('name', 'email', 'birthdate', 'country', 'course', 'invest', 'comments');
-        $formData = array();
+        $formData    = array();
+
         foreach ($paramsNames as $name) {
             $formData[$name] = $this->$name;
         }
-        $randVal = rand(1000, 9999);
+        $randVal      = rand(1000, 9999);
         $dataFileName = sprintf('data_%d.txt', $randVal);
 
-        file_put_contents($savePath.$dataFileName, print_r($formData, TRUE));
+        file_put_contents($savePath.$dataFileName, print_r($formData, true));
 
         $file = $this->getPaymentFile();
 
-        if (NULL !== $file) {
+        if (null !== $file) {
             $newName = sprintf('file_%d.%s', $randVal, $file->guessExtension());
             $file->move($savePath, $newName);
         }

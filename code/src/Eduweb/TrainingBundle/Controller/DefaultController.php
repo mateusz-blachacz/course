@@ -16,21 +16,25 @@ class DefaultController extends Controller
         return $this->render('EduwebTrainingBundle:Default:index.html.twig');
     }
 
-    public function registerUserAction($name,$age,$role){
-        $responseMsq = sprintf("Rejestracja użytkownika o nazwie %s (wiek: %d) rola w systemie: %s",$name,$age,$role);
+    public function registerUserAction($name, $age, $role)
+    {
+        $responseMsq = sprintf("Rejestracja użytkownika o nazwie %s (wiek: %d) rola w systemie: %s", $name, $age, $role);
 
         return new \Symfony\Component\HttpFoundation\Response($responseMsq);
-
     }
-    public function simple1Action(){
-        $responseMsq ='Simple 1';
-        return new \Symfony\Component\HttpFoundation\Response($responseMsq);
 
+    public function simple1Action()
+    {
+        $responseMsq = 'Simple 1';
+
+        return new \Symfony\Component\HttpFoundation\Response($responseMsq);
     }
-    public function simple2Action(){
-        $responseMsq ='Simple 2';
-        return new \Symfony\Component\HttpFoundation\Response($responseMsq);
 
+    public function simple2Action()
+    {
+        $responseMsq = 'Simple 2';
+
+        return new \Symfony\Component\HttpFoundation\Response($responseMsq);
     }
 
     /**
@@ -38,21 +42,20 @@ class DefaultController extends Controller
      *
      * @Method({"GET"})
      */
-    public function registerTesterAction($name, $age, $role){
-        $responseMsq = sprintf("Rejestracja testera o nazwie %s (wiek: %d) rola testera %s",$name,$age,$role);
+    public function registerTesterAction($name, $age, $role)
+    {
+        $responseMsq = sprintf("Rejestracja testera o nazwie %s (wiek: %d) rola testera %s", $name, $age, $role);
 
         return new \Symfony\Component\HttpFoundation\Response($responseMsq);
-
     }
 
     /**
      * @Route("/generate-url")
      */
-    public function generateUrlAction(){
+    public function generateUrlAction()
+    {
         #relative url
-        $response = $this->generateUrl('eduweb_training_registerUser',
-            array('name'=>'Jan',
-            'age'=>12));
+        $response = $this->generateUrl('eduweb_training_registerUser', array('name' => 'Jan', 'age'  => 12));
 
         return new \Symfony\Component\HttpFoundation\Response($response);
     }
@@ -60,11 +63,9 @@ class DefaultController extends Controller
     /**
      * @Route("/generate-url-absolute")
      */
-    public function generateUrl2Action(){
-        #absolute url
-        $response = $this->generateUrl('eduweb_training_registerUser',
-            array('name'=>'Kantana',
-                'age'=>56),TRUE);
+    public function generateUrl2Action()
+    {
+        $response = $this->generateUrl('eduweb_training_registerUser', array('name' => 'Kantana', 'age'  => 56), true);
 
         return new \Symfony\Component\HttpFoundation\Response($response);
     }
@@ -72,33 +73,36 @@ class DefaultController extends Controller
     /**
      * @Route("/generate/{method}", defaults = {"method"="relative"}, requirements={"method"="absolute|relative"})
      */
-    public function generateUrlExperiment2($method){
-        $response ="";
-        if("relative" == $method){
+    public function generateUrlExperiment2($method)
+    {
+        $response = "";
+        if ("relative" == $method) {
             $response = $this->generateUrl('eduweb_training_simple2');
 
-        }elseif ("absolute" == $method){
-            $response = $this->generateUrl('eduweb_training_simple2',array(),TRUE);
+        } elseif ("absolute" == $method) {
+            $response = $this->generateUrl('eduweb_training_simple2', array(), true);
         }
+
         return new shortRes\Response($response);
     }
 
     /**
      * @Route("/gen")
      */
-    public function generateUrlExperiment(){
+    public function generateUrlExperiment()
+    {
         $response = "Hello Experiment";
-        return  new shortRes\Response($response);
+
+        return new shortRes\Response($response);
     }
 
     /**
      * @Route("/debugging", name="eduweb_training_debugging")
      */
-    public function debbugingAction(){
-        $response = "<html>
-            <head></head>
-            <body>debugging</body>
-        </html>";
+    public function debbugingAction()
+    {
+        $response = "<html><head></head><body>debugging</body></html>";
+
         return new shortRes\Response($response);
     }
 }

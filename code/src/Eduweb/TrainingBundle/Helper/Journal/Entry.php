@@ -51,13 +51,13 @@ class Entry
 
     public function isFinished()
     {
-        return (NULL !== $this->end_date);
+        return (null !== $this->end_date);
     }
 
     public function getResult()
     {
         if (!$this->isFinished()) {
-            return NULL;
+            return null;
         }
 
         if (!isset($this->result)) {
@@ -70,7 +70,7 @@ class Entry
     public function isClosedPositive()
     {
         if (!$this->isFinished()) {
-            return FALSE;
+            return false;
         }
 
         return ($this->getResult() > 0);
@@ -79,7 +79,7 @@ class Entry
     public function isClosedNegative()
     {
         if (!$this->isFinished()) {
-            return FALSE;
+            return false;
         }
 
         return ($this->getResult() <= 0);

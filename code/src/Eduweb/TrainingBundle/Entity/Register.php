@@ -81,13 +81,58 @@ class Register
     /**
      * @return mixed
      */
-    public function getName()
+    public function getPaymentFile()
     {
-        return $this->name;
+        return $this->paymentFile;
     }
 
     /**
-     * @param mixed $name
+     * @param mixed $paymentFile
+     *
+     * @return Register
+     */
+    public function setPaymentFile($paymentFile)
+    {
+        $this->paymentFile = $paymentFile;
+
+        return $this;
+    }
+
+    public function save($savePath)
+    {
+        $paramsNames = array('name', 'email', 'birthdate', 'country', 'course', 'invest', 'comments');
+        $formData    = array();
+
+        foreach ($paramsNames as $name) {
+            $formData[$name] = $this->$name;
+        }
+        $randVal      = rand(1000, 9999);
+        $dataFileName = sprintf('data_%d.txt', $randVal);
+
+        file_put_contents($savePath.$dataFileName, print_r($formData, true));
+
+        $file = $this->getPaymentFile();
+
+        if (null !== $file) {
+            $newName = sprintf('file_%d.%s', $randVal, $file->guessExtension());
+            $file->move($savePath, $newName);
+        }
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
      *
      * @return Register
      */

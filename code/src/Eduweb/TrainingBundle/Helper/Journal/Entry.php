@@ -51,13 +51,13 @@ class Entry
 
     public function isFinished()
     {
-        return (NULL !== $this->end_date);
+        return (null !== $this->end_date);
     }
 
     public function getResult()
     {
         if (!$this->isFinished()) {
-            return NULL;
+            return null;
         }
 
         if (!isset($this->result)) {

@@ -231,18 +231,18 @@ class Register
     {
 
         $paramsNames = array('name', 'email', 'birthdate', 'country', 'course', 'invest', 'comments');
-        $formData = array();
+        $formData    = array();
         foreach ($paramsNames as $name) {
             $formData[$name] = $this->$name;
         }
-        $randVal = rand(1000, 9999);
+        $randVal      = rand(1000, 9999);
         $dataFileName = sprintf('data_%d.txt', $randVal);
 
-        file_put_contents($savePath.$dataFileName, print_r($formData, TRUE));
+        file_put_contents($savePath.$dataFileName, print_r($formData, true));
 
         $file = $this->getPaymentFile();
 
-        if (NULL !== $file) {
+        if (null !== $file) {
             $newName = sprintf('file_%d.%s', $randVal, $file->guessExtension());
             $file->move($savePath, $newName);
         }

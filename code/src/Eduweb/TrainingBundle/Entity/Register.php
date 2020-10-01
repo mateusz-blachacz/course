@@ -192,15 +192,19 @@ class Register
     }
 
     /**
-     * @return mixed
+     * Get sex
+     *
+     * @return string
      */
-    public function getBirthdate()
+    public function getSex()
     {
-        return $this->birthdate;
+        return $this->sex;
     }
 
     /**
-     * @param mixed $birthdate
+     * Set birthdate
+     *
+     * @param \DateTime $birthdate
      *
      * @return Register
      */

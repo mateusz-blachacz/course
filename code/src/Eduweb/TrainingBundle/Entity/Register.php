@@ -240,15 +240,19 @@ class Register
     }
 
     /**
-     * @return mixed
+     * Get country
+     *
+     * @return string
      */
-    public function getCourse()
+    public function getCountry()
     {
-        return $this->course;
+        return $this->country;
     }
 
     /**
-     * @param mixed $course
+     * Set course
+     *
+     * @param string $course
      *
      * @return Register
      */

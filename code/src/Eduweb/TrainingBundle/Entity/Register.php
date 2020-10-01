@@ -97,6 +97,7 @@ class Register
 
     /**
      * @param mixed $sex
+     *
      * @return Register
      */
     public function setSex($sex)

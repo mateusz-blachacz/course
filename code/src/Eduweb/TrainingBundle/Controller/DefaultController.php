@@ -67,11 +67,9 @@ class DefaultController extends Controller
     /**
      * @Route("/generate-url-absolute")
      */
-    public function generateUrl2Action(){
-        #absolute url
-        $response = $this->generateUrl('eduweb_training_registerUser',
-            array('name'=>'Kantana',
-                'age'=>56),TRUE);
+    public function generateUrl2Action()
+    {
+        $response = $this->generateUrl('eduweb_training_registerUser', array('name' => 'Kantana', 'age'  => 56), true);
 
         return new \Symfony\Component\HttpFoundation\Response($response);
     }

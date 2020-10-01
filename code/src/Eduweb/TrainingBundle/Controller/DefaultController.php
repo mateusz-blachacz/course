@@ -21,7 +21,6 @@ class DefaultController extends Controller
         $responseMsq = sprintf("Rejestracja użytkownika o nazwie %s (wiek: %d) rola w systemie: %s", $name, $age, $role);
 
         return new \Symfony\Component\HttpFoundation\Response($responseMsq);
-
     }
 
     public function simple1Action()

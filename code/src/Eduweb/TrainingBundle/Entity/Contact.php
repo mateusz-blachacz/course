@@ -69,6 +69,7 @@ class Contact
 
     /**
      * @param mixed $message
+     *
      * @return Contact
      */
     public function setMessage($message)

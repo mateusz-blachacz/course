@@ -288,15 +288,19 @@ class Register
     }
 
     /**
-     * @return mixed
+     * Get invest
+     *
+     * @return array
      */
-    public function getComments()
+    public function getInvest()
     {
-        return $this->comments;
+        return $this->invest;
     }
 
     /**
-     * @param mixed $comments
+     * Set comments
+     *
+     * @param string $comments
      *
      * @return Register
      */
@@ -308,43 +312,12 @@ class Register
     }
 
     /**
-     * @return mixed
-     */
-    public function getPaymentFile()
-    {
-        return $this->paymentFile;
-    }
-
-    /**
-     * @param mixed $paymentFile
+     * Get comments
      *
-     * @return Register
+     * @return string
      */
-    public function setPaymentFile($paymentFile)
+    public function getComments()
     {
-        $this->paymentFile = $paymentFile;
-
-        return $this;
-    }
-
-    public function save($savePath)
-    {
-        $paramsNames = array('name', 'email', 'birthdate', 'country', 'course', 'invest', 'comments');
-        $formData    = array();
-
-        foreach ($paramsNames as $name) {
-            $formData[$name] = $this->$name;
-        }
-        $randVal      = rand(1000, 9999);
-        $dataFileName = sprintf('data_%d.txt', $randVal);
-
-        file_put_contents($savePath.$dataFileName, print_r($formData, true));
-
-        $file = $this->getPaymentFile();
-
-        if (null !== $file) {
-            $newName = sprintf('file_%d.%s', $randVal, $file->guessExtension());
-            $file->move($savePath, $newName);
-        }
+        return $this->comments;
     }
 }

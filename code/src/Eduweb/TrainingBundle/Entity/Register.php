@@ -144,15 +144,19 @@ class Register
     }
 
     /**
-     * @return mixed
+     * Get name
+     *
+     * @return string
      */
-    public function getEmail()
+    public function getName()
     {
-        return $this->email;
+        return $this->name;
     }
 
     /**
-     * @param mixed $email
+     * Set email
+     *
+     * @param string $email
      *
      * @return Register
      */

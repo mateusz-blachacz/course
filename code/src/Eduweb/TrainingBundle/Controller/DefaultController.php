@@ -28,7 +28,6 @@ class DefaultController extends Controller
         $responseMsq = 'Simple 1';
 
         return new \Symfony\Component\HttpFoundation\Response($responseMsq);
-
     }
 
     public function simple2Action()

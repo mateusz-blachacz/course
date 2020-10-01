@@ -77,33 +77,36 @@ class DefaultController extends Controller
     /**
      * @Route("/generate/{method}", defaults = {"method"="relative"}, requirements={"method"="absolute|relative"})
      */
-    public function generateUrlExperiment2($method){
-        $response ="";
-        if("relative" == $method){
+    public function generateUrlExperiment2($method)
+    {
+        $response = "";
+        if ("relative" == $method) {
             $response = $this->generateUrl('eduweb_training_simple2');
 
-        }elseif ("absolute" == $method){
-            $response = $this->generateUrl('eduweb_training_simple2',array(),TRUE);
+        } elseif ("absolute" == $method) {
+            $response = $this->generateUrl('eduweb_training_simple2', array(), true);
         }
+
         return new shortRes\Response($response);
     }
 
     /**
      * @Route("/gen")
      */
-    public function generateUrlExperiment(){
+    public function generateUrlExperiment()
+    {
         $response = "Hello Experiment";
-        return  new shortRes\Response($response);
+
+        return new shortRes\Response($response);
     }
 
     /**
      * @Route("/debugging", name="eduweb_training_debugging")
      */
-    public function debbugingAction(){
-        $response = "<html>
-            <head></head>
-            <body>debugging</body>
-        </html>";
+    public function debbugingAction()
+    {
+        $response = "<html><head></head><body>debugging</body></html>";
+
         return new shortRes\Response($response);
     }
 }

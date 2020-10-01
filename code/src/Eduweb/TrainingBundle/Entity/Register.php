@@ -229,9 +229,9 @@ class Register
 
     public function save($savePath)
     {
-
         $paramsNames = array('name', 'email', 'birthdate', 'country', 'course', 'invest', 'comments');
         $formData    = array();
+
         foreach ($paramsNames as $name) {
             $formData[$name] = $this->$name;
         }

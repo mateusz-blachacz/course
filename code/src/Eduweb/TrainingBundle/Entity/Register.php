@@ -77,6 +77,7 @@ class Register
 
     /**
      * @param mixed $email
+     *
      * @return Register
      */
     public function setEmail($email)

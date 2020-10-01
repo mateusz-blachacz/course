@@ -1,6 +1,7 @@
 <?php
 
 namespace Eduweb\TrainingBundle\Entity;
+
 use Symfony\Component\Validator\Constraints as Assert;
 
 class Contact
@@ -9,11 +10,13 @@ class Contact
      * @Assert\NotBlank
      */
     private $name;
+
     /**
      * @Assert\NotBlank
      * @Assert\Email
      */
     private $email;
+
     private $message;
 
     /**
@@ -31,6 +34,7 @@ class Contact
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -49,6 +53,7 @@ class Contact
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
@@ -67,17 +72,19 @@ class Contact
     public function setMessage($message)
     {
         $this->message = $message;
+
         return $this;
     }
 
-    public function save($savePath){
+    public function save($savePath)
+    {
         $paramsNames = array('name', 'email', 'message');
         $formData = array();
-        foreach ($paramsNames as $name){
+        foreach ($paramsNames as $name) {
             $formData[$name] = $this->$name;
         }
-        $randVal = rand(1000,9999);
-        $dataFileName = sprintf('data_%d.txt',$randVal);
+        $randVal = rand(1000, 9999);
+        $dataFileName = sprintf('data_%d.txt', $randVal);
 
         file_put_contents($savePath.$dataFileName, print_r($formData, TRUE));
     }

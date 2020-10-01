@@ -15,6 +15,7 @@ use Eduweb\TrainingBundle\Form\Type\ContactType;
 
 /**
  * Class BlogController
+ *
  * @package Eduweb\TrainingBundle\Controller
  * @Route("/blog")
  *
@@ -39,8 +40,8 @@ class BlogController extends Controller
     public function journalAction()
     {
         return array(
-            'history' => Journal::getHistoryAsArray(),
-            'historyObj' => Journal::getHistoryAsObjects()
+            'history'    => Journal::getHistoryAsArray(),
+            'historyObj' => Journal::getHistoryAsObjects(),
         );
     }
 
@@ -62,11 +63,11 @@ class BlogController extends Controller
     public function contactAction(Request $request)
     {
         $contact = new Contact();
-        $form = $this->createForm(new ContactType(), $contact);
+        $form    = $this->createForm(new ContactType(), $contact);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $savePath = $this->get('kernel')->getRootDir() . "/../web/uploads/";
+            $savePath = $this->get('kernel')->getRootDir()."/../web/uploads/";
             $contact->save($savePath);
         }
 
@@ -79,7 +80,7 @@ class BlogController extends Controller
     public function followWidgetsAction()
     {
         return array(
-            'list' => DataProvider::getFollowings()
+            'list' => DataProvider::getFollowings(),
         );
 
     }
@@ -90,7 +91,7 @@ class BlogController extends Controller
     public function walletWidgetsAction()
     {
         return array(
-            'list' => DataProvider::getWallet()
+            'list' => DataProvider::getWallet(),
         );
     }
 
@@ -102,7 +103,7 @@ class BlogController extends Controller
     public function guestBookAction()
     {
         return array(
-            'comments' => DataProvider::getGuestBook()
+            'comments' => DataProvider::getGuestBook(),
         );
     }
 
@@ -123,12 +124,12 @@ class BlogController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $savePath = $this->get('kernel')->getRootDir() . '/../web/uploads/';
+            $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
             $register->save($savePath);
         }
 
         $formData = "Dane zapisane";
 
-        return array('form' => $form->createView(), 'formData' => isset($formData) ? $formData : NULL);
+        return array('form' => $form->createView(), 'formData' => isset($formData) ? $formData : null);
     }
 }

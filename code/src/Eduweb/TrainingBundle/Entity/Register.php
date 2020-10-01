@@ -177,6 +177,7 @@ class Register
 
     /**
      * @param mixed $invest
+     *
      * @return Register
      */
     public function setInvest($invest)

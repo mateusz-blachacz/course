@@ -264,15 +264,19 @@ class Register
     }
 
     /**
-     * @return mixed
+     * Get course
+     *
+     * @return string
      */
-    public function getInvest()
+    public function getCourse()
     {
-        return $this->invest;
+        return $this->course;
     }
 
     /**
-     * @param mixed $invest
+     * Set invest
+     *
+     * @param array $invest
      *
      * @return Register
      */

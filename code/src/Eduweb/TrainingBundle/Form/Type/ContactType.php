@@ -17,14 +17,14 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add("name", "text", array("label"=>"Imię"))
-            ->add("email", "email", array("label"=>"email"))
-            ->add("message", "textarea",array("label"=>"Wiadomość"))
-            ->add("save","submit", array("label"=>"Zapisz"));
+            ->add("name", "text", array("label" => "Imię"))
+            ->add("email", "email", array("label" => "email"))
+            ->add("message", "textarea", array("label" => "Wiadomość"))
+            ->add("save", "submit", array("label" => "Zapisz"));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array('data_class'=>'Eduweb\TrainingBundle\Entity\Contact'));
+        $resolver->setDefaults(array('data_class' => 'Eduweb\TrainingBundle\Entity\Contact'));
     }
 }

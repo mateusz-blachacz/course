@@ -118,12 +118,12 @@ class BlogController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $savePath = $this->get('kernel')->getRootDir() . '/../web/uploads/';
+            $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
             $register->save($savePath);
         }
 
         $formData = "Dane zapisane";
 
-        return array('form' => $form->createView(), 'formData' => isset($formData) ? $formData : NULL);
+        return array('form' => $form->createView(), 'formData' => isset($formData) ? $formData : null);
     }
 }

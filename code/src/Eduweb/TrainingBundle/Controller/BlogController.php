@@ -88,9 +88,7 @@ class BlogController extends Controller
      */
     public function walletWidgetsAction()
     {
-        return array(
-            'list' => DataProvider::getWallet()
-        );
+        return array('list' => DataProvider::getWallet(),);
     }
 
     /**

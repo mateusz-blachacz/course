@@ -216,15 +216,19 @@ class Register
     }
 
     /**
-     * @return mixed
+     * Get birthdate
+     *
+     * @return \DateTime
      */
-    public function getCountry()
+    public function getBirthdate()
     {
-        return $this->country;
+        return $this->birthdate;
     }
 
     /**
-     * @param mixed $country
+     * Set country
+     *
+     * @param string $country
      *
      * @return Register
      */

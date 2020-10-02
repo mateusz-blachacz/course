@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
+use Eduweb\TrainingBundle\Form\Type\RegisterType;
 
 /**
  * Class BlogController
@@ -25,7 +26,7 @@ class AdminController extends Controller
     public function listingAction()
     {
         $repo = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
-        $rows = $repo->findBy(array('sex'=>''));
+        $rows = $repo->findBy(array('sex' => ''));
         $rows = $repo->findAll();
 
         return array('rows' => $rows,);
@@ -36,15 +37,54 @@ class AdminController extends Controller
      *
      * @Template
      */
-    public function detailsAction($id){
+    public function detailsAction($id)
+    {
 
-        $repo = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
-        $register  = $repo->find($id);
+        $repo     = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
+        $register = $repo->find($id);
 
-        if(null == $register){
+        if (null == $register) {
             throw $this->createNotFoundException();
         }
 
-        return array('register'=>$register);
+        return array('register' => $register);
+    }
+
+    /**
+     * @Route("/update/{id}", name="edu_blog_admin_update")
+     *
+     * @Template
+     */
+    public function updateAction(Request $request, $id)
+    {
+
+        $repo     = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
+        $register = $repo->find($id);
+
+        if (null == $register) {
+            throw $this->createNotFoundException();
+        }
+        $form = $this->createForm(new RegisterType(), $register);
+
+
+        if ($request->isMethod('POST')) {
+            $session = $this->get('session');
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($register);
+                $em->flush();
+
+                $session->getFlashBag()->add('success', 'Zaktulizowano rekord');
+
+                return $this->redirect($this->generateUrl('edu_blog_admin_detail', array('id' => $register->getId())));
+            } else {
+                $session->getFlashBag()->add('danger', 'Popraw błędy formularza');
+            }
+        }
+
+        return array('form' => $form->createView(), 'register' => $register);
     }
 }

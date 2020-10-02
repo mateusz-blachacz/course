@@ -127,6 +127,8 @@ class BlogController extends Controller
 
         $formData = "Dane zapisane";
 
+        
+
         return array('form' => $form->createView(), 'formData' => isset($formData) ? $formData : null);
     }
 }

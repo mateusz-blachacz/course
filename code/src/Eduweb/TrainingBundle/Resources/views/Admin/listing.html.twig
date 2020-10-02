@@ -4,6 +4,27 @@
 {% block contentConteiner %}
     <article class="col-md-8">
         <h1>Lista rejstracji</h1>
-
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <th>ID</th>
+                <th>Imie i Nazwisko</th>
+                <th>Kraj</th>
+                <th>Kurs</th>
+                <th>Akcje</th>
+            </thead>
+            <tbody>
+            {% for entry in rows %}
+                <tr>
+                    <td>{{ entry.id }}</td>
+                    <td>{{ entry.name }}</td>
+                    <td>{{ entry.country }}</td>
+                    <td>{{ entry.course }}</td>
+                    <td><a class="btn btn-sm btn-info" href="{{  path('edu_blog_admin_detail',{'id': entry.id}) }}}">Zobacz szczegóły</a></td>
+                {% else %}
+                    <td colspan="5">brak rejestracji</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </article>
 {% endblock %}

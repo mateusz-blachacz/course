@@ -62,7 +62,7 @@ class AdminController extends Controller
         $register = $repo->find($id);
 
         if (null == $register) {
-            throw $this->createNotFoundException();
+            throw $this->createNotFoundException('not found');
         }
         $form = $this->createForm(new RegisterType(), $register);
 

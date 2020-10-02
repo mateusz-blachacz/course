@@ -25,9 +25,26 @@ class AdminController extends Controller
     public function listingAction()
     {
         $repo = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
+        $rows = $repo->findBy(array('sex'=>''));
         $rows = $repo->findAll();
 
         return array('rows' => $rows,);
     }
 
+    /**
+     * @Route("/details/{id}", name="edu_blog_admin_detail")
+     *
+     * @Template
+     */
+    public function detailsAction($id){
+
+        $repo = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
+        $register  = $repo->find($id);
+
+        if(null == $register){
+            throw $this->createNotFoundException();
+        }
+
+        return array('register'=>$register);
+    }
 }

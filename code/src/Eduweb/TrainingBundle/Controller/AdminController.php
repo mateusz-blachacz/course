@@ -29,7 +29,13 @@ class AdminController extends Controller
         $rows = $repo->findBy(array('sex' => ''));
         $rows = $repo->findAll();
 
-        return array('rows' => $rows,);
+        if($this->get('security.context')->isGranted('ROLE_ADMIN')){
+            $btns = true;
+        }else{
+            $btns = false;
+        }
+
+        return array('rows' => $rows, 'btns' => $btns,);
     }
 
     /**

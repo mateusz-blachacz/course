@@ -19,7 +19,10 @@
                     <td>{{ entry.name }}</td>
                     <td>{{ entry.country }}</td>
                     <td>{{ entry.course }}</td>
-                    <td><a class="btn btn-sm btn-info" href="{{  path('edu_blog_admin_detail',{'id': entry.id}) }}}">Zobacz szczegóły</a></td>
+                    <td>
+                        <a class="btn btn-sm btn-info" href="{{  path('edu_blog_admin_details',{'id': entry.id}) }}}">Zobacz szczegóły</a>
+                        <a class="btn btn-sm btn-danger" href="{{  path('edu_blog_admin_delete',{'id': entry.id}) }}}">Usuń rekord</a>
+                    </td>
                 {% else %}
                     <td colspan="5">brak rejestracji</td>
                 </tr>

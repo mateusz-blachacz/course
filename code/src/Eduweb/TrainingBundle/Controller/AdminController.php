@@ -87,4 +87,25 @@ class AdminController extends Controller
 
         return array('form' => $form->createView(), 'register' => $register);
     }
+
+    /**
+     * @Route("/delete/{id}", name="edu_blog_admin_delete")
+     */
+    public function deleteAction($id)
+    {
+        $repo     = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
+        $register = $repo->find($id);
+
+        if (null == $register) {
+            throw $this->createNotFoundException();
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($register);
+        $em->flush();
+
+        $this->get('session')->getFlashBag()->add('danger', 'Popraw błędy formularza');
+
+        return $this ->redirect($this->generateUrl('edu_blog_admin_listing'));
+    }
 }

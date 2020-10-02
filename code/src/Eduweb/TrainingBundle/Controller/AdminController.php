@@ -33,7 +33,7 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/details/{id}", name="edu_blog_admin_detail")
+     * @Route("/details/{id}", name="edu_blog_admin_details")
      *
      * @Template
      */

@@ -22,8 +22,21 @@ services:
     image: mariadb
     restart: always
     environment:
+      PUID: 503
+      PGID: 20
       MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: symfony
+      MYSQL_USER: symfony
+      MYSQL_PASSWORD: symfony
+
     volumes:
       - ./db:/var/lib/mysql
     ports:
       - 3306:3306
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db

@@ -80,7 +80,6 @@ class BlogController extends Controller
     public function followWidgetsAction()
     {
         return array('list' => DataProvider::getFollowings(),);
-
     }
 
     /**
@@ -120,6 +119,10 @@ class BlogController extends Controller
         if ($form->isValid()) {
             $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
             $register->save($savePath);
+            $em =$this->getDoctrine()->getManager();
+            $em-> persist($register);
+            $em->flush();
+
         }
 
         $formData = "Dane zapisane";

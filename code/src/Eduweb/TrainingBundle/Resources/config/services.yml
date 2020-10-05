@@ -1,9 +1,6 @@
-parametres:
-    eduweb_training.service.notification.class: Eduweb\TrainingBundle\Service\NotificationService
-
 services:
     edu_notification:
-        class: %eduweb_training.service.notification.class%
+        class: Eduweb\TrainingBundle\Service\NotificationService
         arguments: [@session]
 #    eduweb_training.example:
 #        class: Eduweb\TrainingBundle\Example

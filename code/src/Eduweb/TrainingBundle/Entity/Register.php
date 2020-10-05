@@ -107,6 +107,7 @@ class Register
         foreach ($paramsNames as $name) {
             $formData[$name] = $this->$name;
         }
+
         $randVal      = rand(1000, 9999);
         $dataFileName = sprintf('data_%d.txt', $randVal);
 

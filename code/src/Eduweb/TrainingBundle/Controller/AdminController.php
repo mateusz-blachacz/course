@@ -27,7 +27,13 @@ class AdminController extends Controller
         $repo = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
         $rows = $repo->findAll();
 
-        return array('rows' => $rows);
+        if($this->get('security.context')->isGranted('ROLE_ADMIN')){
+            $btns = true;
+        } else {
+            $btns = false;
+        }
+
+        return array('rows' => $rows, 'btns' => $btns,);
     }
 
     /**
@@ -54,15 +60,14 @@ class AdminController extends Controller
      */
     public function updateAction(Request $request, $id)
     {
-
         $repo     = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
         $register = $repo->find($id);
 
         if (null == $register) {
             throw $this->createNotFoundException('not found');
         }
-        $form = $this->createForm(new RegisterType(), $register);
 
+        $form = $this->createForm(new RegisterType(), $register);
 
         if ($request->isMethod('POST')) {
             $session = $this->get('session');

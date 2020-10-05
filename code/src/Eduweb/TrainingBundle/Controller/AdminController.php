@@ -25,10 +25,9 @@ class AdminController extends Controller
     public function listingAction()
     {
         $repo = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
-        $rows = $repo->findBy(array('sex' => ''));
         $rows = $repo->findAll();
 
-        return array('rows' => $rows,);
+        return array('rows' => $rows);
     }
 
     /**
@@ -38,7 +37,6 @@ class AdminController extends Controller
      */
     public function detailsAction($id)
     {
-
         $repo     = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
         $register = $repo->find($id);
 

@@ -45,7 +45,6 @@ class AdminController extends Controller
      */
     public function detailsAction($id)
     {
-
         $repo     = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
         $register = $repo->find($id);
 

@@ -14,7 +14,6 @@ use Eduweb\TrainingBundle\Form\Type\RegisterType;
  *
  * @package Eduweb\TrainingBundle\Controller
  * @Route("/blog/admin")
- *
  */
 class AdminController extends Controller
 {

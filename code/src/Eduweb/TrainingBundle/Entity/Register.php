@@ -55,7 +55,7 @@ class Register
     private $country;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column()
      *
      * @Assert\NotBlank
      */

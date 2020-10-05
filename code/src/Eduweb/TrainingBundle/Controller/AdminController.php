@@ -14,7 +14,6 @@ use Eduweb\TrainingBundle\Form\Type\RegisterType;
  *
  * @package Eduweb\TrainingBundle\Controller
  * @Route("/blog/admin")
- *
  */
 class AdminController extends Controller
 {
@@ -26,14 +25,13 @@ class AdminController extends Controller
     public function listingAction()
     {
         $repo = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
-        $rows = $repo->findBy(array('sex' => ''));
         $rows = $repo->findAll();
 
         if($this->get('security.context')->isGranted('ROLE_ADMIN')){
             $btns = true;
 
         }else{
-            
+
             $btns = false;
         }
 

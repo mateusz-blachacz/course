@@ -121,8 +121,8 @@ class BlogController extends Controller
             $register->save($savePath);
             $em =$this->getDoctrine()->getManager();
             $em-> persist($register);
-            $em->flush();
 
+            $em->flush();
         }
 
         $formData = "Dane zapisane";

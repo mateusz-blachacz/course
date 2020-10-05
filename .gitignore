@@ -35,8 +35,6 @@ code/vendor/
 code/web/bundles/
 code/web/uploads/
 
-
-
 # PHPUnit
 code/app/phpunit.xml
 /phpunit.xml

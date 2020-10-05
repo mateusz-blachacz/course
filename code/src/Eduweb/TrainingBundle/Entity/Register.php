@@ -23,12 +23,12 @@ class Register
      *
      * @Assert\NotBlank
      * @Assert\Regex(pattern = "/^[a-zA-Z]+ [a-zA-Z]+$/", message = "Musisz podac imie i nazwisko")
-     * @Assert\Length(max=255)
+     * @Assert\Length(max=50)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column()
      *
      * @Assert\NotBlank
      * @Assert\Email

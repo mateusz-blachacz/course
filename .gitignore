@@ -24,7 +24,7 @@ code/app/config/parameters.yml
 code/app/config/parameters.ini
 
 # Managed by Composer
-code/app/bootstrap.php.cache
+#code/app/bootstrap.php.cache
 /var/bootstrap.php.cache
 /bin/*
 !bin/console
@@ -47,7 +47,7 @@ code/app/phpunit.xml
 # Composer PHAR
 /composer.phar
 code/composer.phar
-code/composer.lock
+#code/composer.lock
 
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~

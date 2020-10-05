@@ -1,5 +1,6 @@
 version: '3'
 services:
+
   web:
     build: .
     volumes:
@@ -9,13 +10,11 @@ services:
 
     ports:
       - 80:80
+
     environment:
       XDEBUG_CONFIG: remote_host=host.docker.internal
       APACHE_DOCUMENT_ROOT : /var/www/html/web
-      # /var/www/html
-      #/var/www/html/app/web
 
-      #/var/www/apps/app/public/
     depends_on:
       - db
   db:

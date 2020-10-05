@@ -36,6 +36,7 @@ code/web/bundles/
 code/web/uploads/
 
 
+
 # PHPUnit
 code/app/phpunit.xml
 /phpunit.xml
@@ -45,6 +46,8 @@ code/app/phpunit.xml
 
 # Composer PHAR
 /composer.phar
+code/composer.phar
+code/composer.lock
 
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~

@@ -31,7 +31,9 @@ class AdminController extends Controller
 
         if($this->get('security.context')->isGranted('ROLE_ADMIN')){
             $btns = true;
+
         }else{
+            
             $btns = false;
         }
 

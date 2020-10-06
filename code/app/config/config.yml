@@ -35,9 +35,8 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-    form:
-        resources:
-            - 'EduwebTrainingBundle:Form:form_theme.html.twig'
+    form_theme:
+         - 'EduwebTrainingBundle:Form:form_theme.html.twig'
 
 # Doctrine Configuration
 doctrine:

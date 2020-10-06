@@ -63,7 +63,7 @@ class BlogController extends Controller
     public function contactAction(Request $request)
     {
         $contact = new Contact();
-        $form    = $this->createForm(new ContactType(), $contact);
+        $form    = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
@@ -112,7 +112,7 @@ class BlogController extends Controller
         $register->setEmail("Maciek@edu.web.pl");
         $register->setBirthdate(new \DateTime('1989-10-2'));
 
-        $form = $this->createForm(new RegisterType(), $register);
+        $form = $this->createForm(RegisterType::class, $register);
 
         $form->handleRequest($request);
 

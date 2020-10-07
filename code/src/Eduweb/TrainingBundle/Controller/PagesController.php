@@ -59,7 +59,7 @@ class PagesController extends Controller
      */
     public function printHeaderAction($title, $color)
     {
-        return array('title' => $title, 'color' => $color,);
+       return $this->render('EduwebTrainingBundle:Pages:printHeader.html.twig', ['title' => $title, 'color' => $color,]);
     }
 
     /**

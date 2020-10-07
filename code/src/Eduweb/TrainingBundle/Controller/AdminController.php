@@ -29,11 +29,11 @@ class AdminController extends Controller
 
         if($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')){
             $btns = true;
-        } else {    
+        } else {
             $btns = false;
         }
 
-        return array('rows' => $rows, 'btns' => $btns,);
+        return $this->render('EduwebTrainingBundle:Admin:listing.html.twig',['rows' => $rows, 'btns' => $btns,]);
     }
 
     /**
@@ -50,7 +50,7 @@ class AdminController extends Controller
             throw $this->createNotFoundException();
         }
 
-        return array('register' => $register);
+        return $this->render('EduwebTrainingBundle:Admin:details.html.twig',['register' => $register]);
     }
 
     /**
@@ -67,7 +67,7 @@ class AdminController extends Controller
             throw $this->createNotFoundException('not found');
         }
 
-        $form = $this->createForm(new RegisterType(), $register);
+        $form = $this->createForm(RegisterType::class, $register);
 
         if ($request->isMethod('POST')) {
             $session = $this->get('session');
@@ -87,7 +87,7 @@ class AdminController extends Controller
             }
         }
 
-        return array('form' => $form->createView(), 'register' => $register);
+        return $this->render('EduwebTrainingBundle:Admin:update.html.twig', ['form' => $form->createView(), 'register' => $register]);
     }
 
     /**

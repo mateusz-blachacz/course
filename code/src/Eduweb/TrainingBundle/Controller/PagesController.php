@@ -31,7 +31,7 @@ class PagesController extends Controller
      */
     public function aboutTwig()
     {
-        return array();
+        return new Response('aboutTwig');
     }
 
     /**

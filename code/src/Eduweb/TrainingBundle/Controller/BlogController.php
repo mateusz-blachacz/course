@@ -10,7 +10,6 @@ use Eduweb\TrainingBundle\Helper\Journal\Journal;
 use Eduweb\TrainingBundle\Helper\DataProvider;
 use Eduweb\TrainingBundle\Form\Type\RegisterType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Eduweb\TrainingBundle\Entity\Register;
 use Eduweb\TrainingBundle\Form\Type\ContactType;
 
@@ -31,7 +30,6 @@ class BlogController extends Controller
     public function indexAction()
     {
         return $this->render('EduwebTrainingBundle:Blog:index.html.twig');
-//      return new Response("",Response::HTTP_OK,array());
     }
 
     /**
@@ -101,7 +99,7 @@ class BlogController extends Controller
      */
     public function guestBookAction()
     {
-        return array('comments' => DataProvider::getGuestBook(),);
+        return $this->render('EduwebTrainingBundle:Blog:guestBook.html.twig', ['comments' => DataProvider::getGuestBook(),]);
     }
 
     /**
@@ -119,18 +117,19 @@ class BlogController extends Controller
         $form = $this->createForm(RegisterType::class, $register);
 
         $form->handleRequest($request);
+        if($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
+                $register->save($savePath);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($register);
 
-        if ($form->isValid()) {
-            $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
-            $register->save($savePath);
-            $em =$this->getDoctrine()->getManager();
-            $em-> persist($register);
-
-            $em->flush();
+                $em->flush();
+            }
         }
 
         $formData = "Dane zapisane";
 
-        return array('form' => $form->createView(), 'formData' => isset($formData) ? $formData : null);
+        return $this->render('EduwebTrainingBundle:Blog:register.html.twig', ['form'=>$form->createView(), 'formData' => isset($formData) ? $formData : null]);
     }
 }

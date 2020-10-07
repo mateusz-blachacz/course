@@ -28,10 +28,10 @@ class RegisterType extends AbstractType
         $builder
             ->add('name', TextType::class, array('label' => 'Imię i Nazwisko'))
             ->add('email', EmailType::class, array('label' => 'E-mail'))
-            ->add('sex', ChoiceType::class, array('label' => 'Płeć', 'choices' => array('m' => 'Mężczyzna', 'f' => 'Kobieta'), "expanded" => true))
-            ->add('birthdate', BirthdayType::class, array('label' => 'Data Urodzenia', 'empty_value' => ' --', 'empty_data' => null))
-            ->add('country', CountryType::class, array('label' => 'Kraj pochodzenia', 'empty_value' => ' --', 'empty_data' => null))
-            ->add('course', ChoiceType::class, array('label' => 'Poziom Kursu', 'choices' => array('basic' => 'Kurs podstawowy', 'at' => 'Analiza techniczna', 'af' => 'Analiza fundamentalna', 'master' => 'Kurs zaawansowany'), 'empty_value' => ' --', 'empty_data' => null))
+            ->add('sex', ChoiceType::class, array('label' => 'Płeć', 'choices' => array('Mężczyzna' => 'm', 'Kobieta' => 'f'), "expanded" => true))
+            ->add('birthdate', BirthdayType::class, array('label' => 'Data Urodzenia', 'empty_data' => null))
+            ->add('country', CountryType::class, array('label' => 'Kraj pochodzenia', 'empty_data' => null))
+            ->add('course', ChoiceType::class, array('label' => 'Poziom Kursu', 'choices' => array('Kurs podstawowy' => 'basic', 'Analiza techniczna' => 'at', 'Analiza fundamentalna' => 'af', 'Kurs zaawansowany' => 'master'), 'empty_data' => null))
             ->add('invest', ChoiceType::class, array('label' => 'Inwestycje', 'choices' => array('a' => 'Akcje', 'o' => 'Obligacje', 'f' => 'Forex', 'etf' => 'ETF'), "expanded" => true, 'multiple' => true))
             ->add('comments', TextareaType::class, array('label' => 'Kometarze'))
             ->add('paymentFile', FileType::class, array('label' => 'Potwierdzenie przelewu'))
@@ -41,7 +41,7 @@ class RegisterType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array('data_class' => 'Eduweb\TrainingBundle\Entity\Register'));
+        $resolver->setDefaults(['data_class' => 'Eduweb\TrainingBundle\Entity\Register']);
     }
 
 }

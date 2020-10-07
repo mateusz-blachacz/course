@@ -81,7 +81,7 @@ class AdminController extends Controller
 
                 $session->getFlashBag()->add('success', 'Zaktulizowano rekord');
 
-                return $this->redirect($this->generateUrl('edu_blog_admin_details', array('id' => $register->getId())));
+                return $this->redirect($this->generateUrl('edu_blog_admin_details', ['id' => $register->getId()]));
             } else {
                 $session->getFlashBag()->add('danger', 'Popraw błędy formularza');
             }

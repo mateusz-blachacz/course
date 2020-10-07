@@ -20,7 +20,6 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "swiftmailer/swiftmailer": "~5.4",
         "symfony/dependency-injection": "~3.0",
-        "symfony/swiftmailer-bundle": "~2.6",
         "symfony/symfony": "3.4",
         "twig/twig": "^1.0||^2.0"
     },

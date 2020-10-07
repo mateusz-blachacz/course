@@ -81,7 +81,7 @@ class BlogController extends Controller
      */
     public function followWidgetsAction()
     {
-        return array('list' => DataProvider::getFollowings(),);
+        return ['list' => DataProvider::getFollowings(),];
     }
 
     /**
@@ -89,7 +89,7 @@ class BlogController extends Controller
      */
     public function walletWidgetsAction()
     {
-        return array('list' => DataProvider::getWallet(),);
+        return ['list' => DataProvider::getWallet(),];
     }
 
     /**

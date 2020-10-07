@@ -60,7 +60,7 @@ class Journal
 
     static function getHistoryAsObjects()
     {
-        $objArr = array();
+        $objArr = [];
         foreach (static::getHistoryAsArray() as $row) {
             $objArr[] = new Entry($row);
         }

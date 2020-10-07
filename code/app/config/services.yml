@@ -12,9 +12,9 @@ services:
         autoconfigure: true
         autowire: true
         public: false
-    EduwebTrainingBundle\:
-        exclude: '%kernel.project_dir%/src/EduwebTrainingBundle/{Entity,Repository,Resources,Tests}'
-        resource: '%kernel.project_dir%/src/EduwebTrainingBundle/*'
-    EduwebTrainingBundle\Controller\:
-        resource: '%kernel.project_dir%/src/EduwebTrainingBundle/*'
+    Eduweb\TrainingBundle\:
+        exclude: '%kernel.project_dir%/src/Eduweb/TrainingBundle/{Entity,Repository,Resources,Tests}'
+        resource: '%kernel.project_dir%/src/Eduweb/TrainingBundle/*'
+    Eduweb\TrainingBundle\Controller\:
+        resource: '%kernel.project_dir%/src/Eduweb/TrainingBundle/*'
         tags: ['controller.service_arguments']

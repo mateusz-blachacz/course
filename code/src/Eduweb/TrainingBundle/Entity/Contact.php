@@ -81,8 +81,8 @@ class Contact
 
     public function save($savePath)
     {
-        $paramsNames = array('name', 'email', 'message');
-        $formData    = array();
+        $paramsNames = ['name', 'email', 'message'];
+        $formData    = [];
         foreach ($paramsNames as $name) {
             $formData[$name] = $this->$name;
         }

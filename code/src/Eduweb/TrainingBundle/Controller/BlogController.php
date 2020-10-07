@@ -10,6 +10,7 @@ use Eduweb\TrainingBundle\Helper\Journal\Journal;
 use Eduweb\TrainingBundle\Helper\DataProvider;
 use Eduweb\TrainingBundle\Form\Type\RegisterType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Eduweb\TrainingBundle\Entity\Register;
 use Eduweb\TrainingBundle\Form\Type\ContactType;
 
@@ -29,7 +30,8 @@ class BlogController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        return $this->render('EduwebTrainingBundle:Blog:index.html.twig');
+//      return new Response("",Response::HTTP_OK,array());
     }
 
     /**
@@ -52,7 +54,7 @@ class BlogController extends Controller
      */
     public function aboutAction()
     {
-        return array();
+        return $this->render('EduwebTrainingBundle:Blog:about.html.twig');
     }
 
     /**

@@ -3,7 +3,18 @@
 parameters:
     #parameter_name: value
 
-services:
+#services:
     #service_name:
     #    class: AppBundle\Directory\ClassName
     #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
+services:
+    _defaults:
+        autoconfigure: true
+        autowire: true
+        public: false
+    EduwebTrainingBundle\:
+        exclude: '%kernel.project_dir%/src/EduwebTrainingBundle/{Entity,Repository,Resources,Tests}'
+        resource: '%kernel.project_dir%/src/EduwebTrainingBundle/*'
+    EduwebTrainingBundle\Controller\:
+        resource: '%kernel.project_dir%/src/EduwebTrainingBundle/*'
+        tags: ['controller.service_arguments']

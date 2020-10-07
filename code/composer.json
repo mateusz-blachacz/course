@@ -15,7 +15,8 @@
     },
     "require": {
         "php": ">=7.2.5",
-        "doctrine/orm": "^2.4.8",
+        "doctrine/orm": "^2.6",
+        "doctrine/doctrine-bundle": "2.0",
         "incenteev/composer-parameter-handler": "~2.0",
         "swiftmailer/swiftmailer": "~6.1",
         "symfony/swiftmailer-bundle": "^3.1",

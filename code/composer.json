@@ -18,7 +18,7 @@
         "doctrine/doctrine-bundle": "^1.1",
         "doctrine/orm": "^2.4.8",
         "incenteev/composer-parameter-handler": "~2.0",
-        "swiftmailer/swiftmailer": "~5.4",
+        "swiftmailer/swiftmailer": "~6.1",
         "symfony/dependency-injection": "~3.0",
         "symfony/symfony": "3.4",
         "twig/twig": "^1.0||^2.0"

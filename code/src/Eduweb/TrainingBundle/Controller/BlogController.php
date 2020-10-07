@@ -68,12 +68,14 @@ class BlogController extends Controller
         $form    = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $savePath = $this->get('kernel')->getRootDir()."/../web/uploads/";
-            $contact->save($savePath);
+        if($form->isSubmitted()) {
+            if ($form->isValid()) {
+                $savePath = $this->get('kernel')->getRootDir()."/../web/uploads/";
+                $contact->save($savePath);
+            }
         }
 
-        return array('form' => $form->createView());
+        return $this->render('EduwebTrainingBundle:Blog:contact.html.twig', ['form' => $form->createView(),]);
     }
 
     /**

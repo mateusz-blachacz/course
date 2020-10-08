@@ -73,7 +73,7 @@ class AdminController extends Controller
             $session = $this->get('session');
             $form->handleRequest($request);
 
-            if ($form->isValid()) {
+            if ($form->isSubmitted() && $form->isValid()) {
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($register);

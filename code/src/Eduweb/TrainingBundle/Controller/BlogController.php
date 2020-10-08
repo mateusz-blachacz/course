@@ -115,15 +115,13 @@ class BlogController extends Controller
         $form = $this->createForm(RegisterType::class, $register);
 
         $form->handleRequest($request);
-        if($form->isSubmitted()) {
-            if ($form->isValid()) {
-                $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
-                $register->save($savePath);
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($register);
+        if ($form ->isSubmitted() && $form->isValid()) {
+            $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
+            $register->save($savePath);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($register);
 
-                $em->flush();
-            }
+            $em->flush();
         }
 
         $formData = "Dane zapisane";

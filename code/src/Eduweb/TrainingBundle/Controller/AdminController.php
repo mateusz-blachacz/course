@@ -33,7 +33,7 @@ class AdminController extends Controller
             $btns = false;
         }
 
-        return $this->render('EduwebTrainingBundle:Admin:listing.html.twig',['rows' => $rows, 'btns' => $btns,]);
+        return $this->render('EduwebTrainingBundle:Admin:listing.html.twig', ['rows' => $rows, 'btns' => $btns]);
     }
 
     /**
@@ -50,7 +50,7 @@ class AdminController extends Controller
             throw $this->createNotFoundException();
         }
 
-        return $this->render('EduwebTrainingBundle:Admin:details.html.twig',['register' => $register]);
+        return $this->render('EduwebTrainingBundle:Admin:details.html.twig', ['register' => $register]);
     }
 
     /**

@@ -28,11 +28,11 @@ class RegisterType extends AbstractType
         $builder
             ->add('name', TextType::class, ['label' => 'Imię i Nazwisko'])
             ->add('email', EmailType::class, ['label' => 'E-mail'])
-            ->add('sex', ChoiceType::class, ['label' => 'Płeć', 'choices' => ['Mężczyzna' => 'm', 'Kobieta' => 'f'], "expanded" => true])
+            ->add('sex', ChoiceType::class, ['label' => 'Płeć', 'choices' => ['Mężczyzna' => 'm', 'Kobieta' => 'f'], 'expanded' => true])
             ->add('birthdate', BirthdayType::class, ['label' => 'Data Urodzenia', 'empty_data' => null])
             ->add('country', CountryType::class, ['label' => 'Kraj pochodzenia', 'empty_data' => null])
             ->add('course', ChoiceType::class, ['label' => 'Poziom Kursu', 'choices' => ['Kurs podstawowy' => 'basic', 'Analiza techniczna' => 'at', 'Analiza fundamentalna' => 'af', 'Kurs zaawansowany' => 'master'], 'empty_data' => null])
-            ->add('invest', ChoiceType::class, ['label' => 'Inwestycje', 'choices' => ['a' => 'Akcje', 'o' => 'Obligacje', 'f' => 'Forex', 'etf' => 'ETF'], "expanded" => true, 'multiple' => true])
+            ->add('invest', ChoiceType::class, ['label' => 'Inwestycje', 'choices' => ['a' => 'Akcje', 'o' => 'Obligacje', 'f' => 'Forex', 'etf' => 'ETF'], 'expanded' => true, 'multiple' => true])
             ->add('comments', TextareaType::class, ['label' => 'Kometarze'])
             ->add('paymentFile', FileType::class, ['label' => 'Potwierdzenie przelewu'])
             ->add('rules', CheckboxType::class, ['label' => 'Regulamin', 'constraints' => [new Assert\NotBlank()], 'mapped' => false])

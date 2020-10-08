@@ -27,9 +27,9 @@ class AdminController extends Controller
         $repo = $this->getDoctrine()->getRepository('EduwebTrainingBundle:Register');
         $rows = $repo->findAll();
 
-        if($this->get('security.context')->isGranted('ROLE_ADMIN')){
+        if($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')){
             $btns = true;
-        } else {
+        } else {    
             $btns = false;
         }
 

@@ -24,6 +24,7 @@
         "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {
+        "symfony/maker-bundle": "^1.*",
         "symfony/phpunit-bridge": "~4.0"
     },
     "scripts": {

@@ -29,11 +29,11 @@ class AdminController extends Controller
 
         if($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')){
             $btns = true;
-        } else {    
+        } else {
             $btns = false;
         }
 
-        return array('rows' => $rows, 'btns' => $btns,);
+        return $this->render('EduwebTrainingBundle:Admin:listing.html.twig', ['rows' => $rows, 'btns' => $btns]);
     }
 
     /**
@@ -50,7 +50,7 @@ class AdminController extends Controller
             throw $this->createNotFoundException();
         }
 
-        return array('register' => $register);
+        return $this->render('EduwebTrainingBundle:Admin:details.html.twig', ['register' => $register]);
     }
 
     /**
@@ -67,13 +67,13 @@ class AdminController extends Controller
             throw $this->createNotFoundException('not found');
         }
 
-        $form = $this->createForm(new RegisterType(), $register);
+        $form = $this->createForm(RegisterType::class, $register);
 
         if ($request->isMethod('POST')) {
             $session = $this->get('session');
             $form->handleRequest($request);
 
-            if ($form->isValid()) {
+            if ($form->isSubmitted() && $form->isValid()) {
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($register);
@@ -81,13 +81,13 @@ class AdminController extends Controller
 
                 $session->getFlashBag()->add('success', 'Zaktulizowano rekord');
 
-                return $this->redirect($this->generateUrl('edu_blog_admin_details', array('id' => $register->getId())));
+                return $this->redirect($this->generateUrl('edu_blog_admin_details', ['id' => $register->getId()]));
             } else {
                 $session->getFlashBag()->add('danger', 'Popraw błędy formularza');
             }
         }
 
-        return array('form' => $form->createView(), 'register' => $register);
+        return $this->render('EduwebTrainingBundle:Admin:update.html.twig', ['form' => $form->createView(), 'register' => $register]);
     }
 
     /**

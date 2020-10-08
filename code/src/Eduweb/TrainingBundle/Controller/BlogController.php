@@ -29,7 +29,7 @@ class BlogController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        return $this->render('EduwebTrainingBundle:Blog:index.html.twig');
     }
 
     /**
@@ -52,7 +52,7 @@ class BlogController extends Controller
      */
     public function aboutAction()
     {
-        return array();
+        return $this->render('EduwebTrainingBundle:Blog:about.html.twig');
     }
 
     /**
@@ -66,28 +66,28 @@ class BlogController extends Controller
         $form    = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $savePath = $this->get('kernel')->getRootDir()."/../web/uploads/";
             $contact->save($savePath);
         }
 
-        return array('form' => $form->createView());
+        return $this->render('EduwebTrainingBundle:Blog:contact.html.twig', ['form' => $form->createView()]);
     }
 
     /**
-     * @Template("EduwebTrainingBundle:Blog/Widgets:followingWidget.html.twig")
+     * @Template
      */
     public function followWidgetsAction()
     {
-        return array('list' => DataProvider::getFollowings(),);
+        return $this->render("EduwebTrainingBundle:Blog/Widgets:followingWidget.html.twig", ['list' => DataProvider::getFollowings()]);
     }
 
     /**
-     * @Template("EduwebTrainingBundle:Blog/Widgets:walletWidget.html.twig")
+     * @Template
      */
     public function walletWidgetsAction()
     {
-        return array('list' => DataProvider::getWallet(),);
+        return $this->render("EduwebTrainingBundle:Blog/Widgets:walletWidget.html.twig", ['list' => DataProvider::getWallet()]);
     }
 
     /**
@@ -97,7 +97,7 @@ class BlogController extends Controller
      */
     public function guestBookAction()
     {
-        return array('comments' => DataProvider::getGuestBook(),);
+        return $this->render('EduwebTrainingBundle:Blog:guestBook.html.twig', ['comments' => DataProvider::getGuestBook()]);
     }
 
     /**
@@ -115,18 +115,17 @@ class BlogController extends Controller
         $form = $this->createForm(RegisterType::class, $register);
 
         $form->handleRequest($request);
-
-        if ($form->isValid()) {
+        if ($form ->isSubmitted() && $form->isValid()) {
             $savePath = $this->get('kernel')->getRootDir().'/../web/uploads/';
             $register->save($savePath);
-            $em =$this->getDoctrine()->getManager();
-            $em-> persist($register);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($register);
 
             $em->flush();
         }
 
         $formData = "Dane zapisane";
 
-        return array('form' => $form->createView(), 'formData' => isset($formData) ? $formData : null);
+        return $this->render('EduwebTrainingBundle:Blog:register.html.twig', ['form'=>$form->createView(), 'formData' => isset($formData) ? $formData : null]);
     }
 }

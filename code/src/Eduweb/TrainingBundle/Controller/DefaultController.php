@@ -55,7 +55,7 @@ class DefaultController extends Controller
     public function generateUrlAction()
     {
         #relative url
-        $response = $this->generateUrl('eduweb_training_registerUser', array('name' => 'Jan', 'age'  => 12));
+        $response = $this->generateUrl('eduweb_training_registerUser', ['name' => 'Jan', 'age'  => 12]);
 
         return new \Symfony\Component\HttpFoundation\Response($response);
     }
@@ -65,7 +65,7 @@ class DefaultController extends Controller
      */
     public function generateUrl2Action()
     {
-        $response = $this->generateUrl('eduweb_training_registerUser', array('name' => 'Kantana', 'age'  => 56), true);
+        $response = $this->generateUrl('eduweb_training_registerUser', ['name' => 'Kantana', 'age'  => 56], true);
 
         return new \Symfony\Component\HttpFoundation\Response($response);
     }
@@ -80,7 +80,7 @@ class DefaultController extends Controller
             $response = $this->generateUrl('eduweb_training_simple2');
 
         } elseif ("absolute" == $method) {
-            $response = $this->generateUrl('eduweb_training_simple2', array(), true);
+            $response = $this->generateUrl('eduweb_training_simple2', [], true);
         }
 
         return new shortRes\Response($response);
